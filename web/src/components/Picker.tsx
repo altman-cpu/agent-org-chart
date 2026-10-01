@@ -27,7 +27,7 @@ export default function Picker({ teams, openTeamId, query, onQuery, onOpenTeam }
           <GitHubLink />
         </div>
         <div>
-          <p>Org charts of real agent teams. Pick one to see who's on it, then copy one prompt to bring the whole team into your agent.</p>
+          <p>Org charts of real agent teams. Pick one, copy one prompt, and send it to your agent: Grok Bot, OpenAI dots, or anything that can spawn teammates.</p>
         </div>
       </header>
       <label htmlFor="role-search" className="sr-only">Find a team or role</label>

@@ -65,7 +65,7 @@ export default function TeamPanel({ team, roleId, flash, onRole, onCopyImport, o
 
       <section className={`move${flash ? ' is-flash' : ''}`} aria-labelledby="move-h">
         <h3 id="move-h">Move this team in</h3>
-        <p>Paste this into any agent that can spawn teammates. It reads the chart and hires the whole team.</p>
+        <p>Paste this into your agent: Grok Bot, OpenAI dots, or any agent that can spawn teammates. It reads the chart and sets up the team.</p>
         <div className="prompt"><code>{importPrompt(chart.id)}</code></div>
         <button type="button" className="btn-primary" onClick={onCopyImport}>Copy import prompt</button>
         <div className="move-links">

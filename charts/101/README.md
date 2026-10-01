@@ -1,4 +1,4 @@
-# Grok Bot 101
+# 101
 
 Job titles from Galaxy Day 1 livestream sidebar.
 

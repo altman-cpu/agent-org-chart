@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "id": "101",
-  "title": "Grok Bot 101",
-  "summary": "Grok Bot 101 team from Galaxy Day 1 livestream.",
-  "version": "3.0.0",
+  "title": "101",
+  "summary": "101 team from Galaxy Day 1 livestream.",
+  "version": "3.1.0",
   "tags": ["101"],
   "sources": ["https://x.com/i/broadcasts/1AxRnZbVpjaxl"],
   "principles": [],
