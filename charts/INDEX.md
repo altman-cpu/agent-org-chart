@@ -4,7 +4,7 @@ Available org charts in this catalog. See [`../PROTOCOL.md`](../PROTOCOL.md).
 
 | id | title | one-liner |
 | --- | --- | --- |
-| [`101`](./101/) | Grok Bot 101 | Comms Drafter + Slide Maker (peers) |
+| [`101`](./101/) | 101 | Comms Drafter + Slide Maker (peers) |
 | [`customer-support`](./customer-support/) | Customer Support | Build + Reply + Alert + Tune (peers) |
 | [`engineering`](./engineering/) | Engineering | Engineering Manager + Engineer |
 | [`founders`](./founders/) | Founders | Product + Design + Comms + Random (peers) |

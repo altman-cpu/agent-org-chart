@@ -4,12 +4,14 @@
 
 Portable org charts you can import on any agent platform with a spawn CLI. **Pick one focused org** that matches your use case — each chart is a small, importable team pattern.
 
+Works with Grok Bot, OpenAI dots, and any agent that can create teammates or background agents. Browse them at [agent-org-chart-ecru.vercel.app](https://agent-org-chart-ecru.vercel.app).
+
 ![Awesome](https://awesome.re/badge.svg)
 ![Public](https://img.shields.io/badge/catalog-public-lightgrey.svg)
 
 ## Table of Contents
 
-- [101](#101) — Grok Bot 101 team
+- [101](#101) — 101 team
 - [Customer Support](#customer-support) — Customer support team
 - [Engineering](#engineering) — Engineering team
 - [Founders](#founders) — Founders team
@@ -32,7 +34,7 @@ Comms Drafter
 Slide Maker
 ```
 
-**Grok Bot 101** from Day 1: two specialists (peers).
+**101** from Day 1: two specialists (peers).
 
 **Import:** `Import 101 from https://github.com/serenakeyitan/agent-org-chart`
 

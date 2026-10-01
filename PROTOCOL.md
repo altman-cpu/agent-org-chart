@@ -2,6 +2,15 @@
 
 Any agent that can create teammates and channels on **its** platform should follow these steps. Do **not** assume a specific product’s tool names (Grok Bot, Cursor, etc.). Use whatever create-agent / spawn / update-profile / create-channel commands your platform provides.
 
+## Platforms with one agent
+
+Some platforms give the user one agent that cannot create other named agents yet, but can run background or sub-agents and scheduled tasks (for example OpenAI dots at launch: one primary dot, with background agents and recurring checks). On those, import the chart into the one agent instead of spawning teammates:
+
+1. Keep the chart's structure as the agent's working model: the orchestrator role is the agent itself; each other role becomes a named background or sub-agent it hands that role's work to.
+2. Create each `routines[]` entry as a scheduled task (step 7). Use `cron` where the platform accepts it; otherwise translate it to the platform's schedule wording.
+3. Skip channel creation (step 6) unless the platform has group threads.
+4. Tell the user which roles run as background agents, and that they can be split into separate agents once the platform supports more than one.
+
 ## 1. Pick a chart
 
 1. Open [`charts/INDEX.md`](./charts/INDEX.md).
