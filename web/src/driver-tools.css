@@ -69,7 +69,8 @@
 .driver-number-suffix { padding: 0 11px 0 3px; }
 .driver-number-wrap:has(.driver-number-suffix) input { padding-left: 7px; }
 
-.driver-import-row, .driver-action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 19px; }
+.driver-import-row, .driver-action-row, .driver-speech-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 19px; }
+.driver-speech-actions { margin-top: 13px; }
 .driver-hidden-file { display: none; }
 .driver-button { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; border: 1px solid transparent; border-radius: 8px; padding: 8px 12px; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; transition: filter .15s, border-color .15s, background .15s; }
 .driver-button-primary { background: var(--accent); color: var(--accent-ink); }

@@ -23,6 +23,7 @@ Profile and service-menu edits are saved in this browser’s local storage. The 
 
 - Earnings estimator with editable assumptions and client-side CSV import (`gross,miles,online_hours`). The CSV is parsed in the browser, not uploaded.
 - Appeal-preparation workspace that creates a text draft for the user to review and submit through official support. Appeal details are not persisted or submitted.
+- Device-native read-aloud for forecasts and drafts, using one available English browser/system voice. It does not use Qwen or send audio to a speech provider. Speech-to-text is not connected; an external provider needs to be specified and documented.
 - Integration-readiness checklist and brief. Checklist progress is saved locally; the page makes no provider calls.
 
 Planner assumptions are saved locally. These features do not access driver accounts, alter platform pay/settings, bypass paid features, or submit appeals.

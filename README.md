@@ -17,7 +17,7 @@ The browser app is a static React + TypeScript + Vite site. It provides:
 
 - `#/` — the portable agent org-chart catalog (the charts remain the source of truth for team roles).
 - `#/business` — a DASH Car Wash starter with an editable local service menu and rideshare-driver/fleet workflows.
-- `#/driver-tools` — a personal earnings estimator, client-side CSV summary import, appeal-draft workspace, and integration checklist.
+- `#/driver-tools` — a personal earnings estimator, client-side CSV summary import, appeal-draft workspace with device-native read-aloud, and integration checklist.
 
 **Integration status:** this is a front-end prototype with no backend and no live bank, Uber, Mystro, payment, crypto, or Arena.ai connections. Provider-neutral read-only contracts are defined in [`web/src/lib/business-adapters.ts`](./web/src/lib/business-adapters.ts); the proposed digital-asset contract and verification requirements are in [`docs/integrations/readonly-digital-assets.md`](./docs/integrations/readonly-digital-assets.md). “Genesis Tencen / ABI OMNI 1000” remains unverified; do not assume endpoints, an ABI, chain, or contract address. The digital-asset design excludes past analytics, user-history personalization, wallet credentials, and transactions. The app cannot change Arena.ai defaults or automate cross-repository merges; code changes use the normal GitHub pull-request review process.
 

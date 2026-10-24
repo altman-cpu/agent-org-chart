@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react'
+import { speakWithDeviceVoice, stopDeviceVoice } from './lib/speech'
 import './driver-tools.css'
 
 type TabId = 'planner' | 'appeal' | 'integration'
@@ -289,7 +290,10 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
   const [integrationGoal, setIntegrationGoal] = useState('')
   const [docsUrl, setDocsUrl] = useState('')
   const [integrationMessage, setIntegrationMessage] = useState('')
+  const [speechMessage, setSpeechMessage] = useState('')
   const csvInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => () => stopDeviceVoice(), [])
 
   useEffect(() => {
     try {
@@ -319,6 +323,7 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
 
   const appealDraft = useMemo(() => buildAppealDraft(appealForm), [appealForm])
   const completedChecks = INTEGRATION_CHECKS.filter(item => checklist[item.id] === true).length
+  const forecastSpeechText = `Estimated gross: ${money(estimatedGross)}. Estimated mileage cost: ${money(estimatedVehicleCost)}. Estimated net: ${money(estimatedNet)} over ${planner.shiftHours} online hours. Your personal target is ${money(planner.netTarget)}. This is an estimate, not a guarantee.`
 
   const setPlannerValue = (key: keyof PlannerInputs, value: number) => {
     setPlanner(current => ({ ...current, [key]: value }))
@@ -327,6 +332,16 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
   const setAppealValue = (key: keyof AppealForm, value: string) => {
     setAppealForm(current => ({ ...current, [key]: value }))
     setAppealMessage('')
+  }
+
+  const readAloud = (text: string) => {
+    const result = speakWithDeviceVoice(text)
+    setSpeechMessage(result.ok ? `${result.message} Voice: ${result.voiceName}.` : result.message)
+  }
+
+  const stopReadAloud = () => {
+    stopDeviceVoice()
+    setSpeechMessage('Read-aloud stopped.')
   }
 
   const handleCsv = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -389,7 +404,7 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
           <p className="driver-eyebrow">INDEPENDENT RIDESHARE WORKSPACE</p>
           <h1>Make each shift more intentional.</h1>
           <p className="driver-intro-copy">Estimate shift economics, prepare a fact-based support request, and plan any future integration around documented, authorized access.</p>
-          <p className="driver-disclaimer"><strong>Independent prototype.</strong> Not affiliated with Mystro or Uber. It makes no provider account/API calls, unlocks no paid features, changes no pay/account settings, and submits no appeals.</p>
+          <p className="driver-disclaimer"><strong>Independent prototype.</strong> Not affiliated with Mystro or Uber. It makes no provider account/API calls, unlocks no paid features, changes no pay/account settings, and submits no appeals. Read-aloud uses the browser/device voice; speech-to-text has no provider configured.</p>
         </section>
 
         <nav className="driver-tabs" role="tablist" aria-label="Driver toolkit">
@@ -452,6 +467,11 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
                       ? `At this estimated net rate, about ${hoursToTarget.toFixed(1)} online hours would reach the target.`
                       : 'This estimate is at or below zero net per hour; adjust assumptions or review the cost inputs.'}
                 </p>
+                <div className="driver-speech-actions">
+                  <button type="button" className="driver-button driver-button-quiet" onClick={() => readAloud(forecastSpeechText)}>Read forecast aloud</button>
+                  <button type="button" className="driver-text-button" onClick={stopReadAloud}>Stop</button>
+                </div>
+                {speechMessage && <p className="driver-status" role="status">{speechMessage}</p>}
                 <p className="driver-footnote">Estimate only — excludes taxes, tolls, insurance, downtime, and other costs unless included in your inputs. Actual earnings are not guaranteed and this tool cannot change platform pay.</p>
               </aside>
             </div>
@@ -479,10 +499,13 @@ export default function DriverWorkspace({ onBack }: { onBack: () => void }) {
                 <div className="driver-action-row">
                   <button type="button" className="driver-button driver-button-primary" onClick={handleCopyAppeal}>Copy draft</button>
                   <button type="button" className="driver-button driver-button-quiet" onClick={() => downloadText('support-appeal-draft.txt', appealDraft)}>Download draft</button>
+                  <button type="button" className="driver-button driver-button-quiet" onClick={() => readAloud(appealDraft)}>Read draft aloud</button>
+                  <button type="button" className="driver-text-button" onClick={stopReadAloud}>Stop audio</button>
                   <button type="button" className="driver-text-button" onClick={() => { setAppealForm(initialAppeal); setAppealMessage('Draft cleared.') }}>Clear</button>
                 </div>
                 {appealMessage && <p className="driver-status" role="status">{appealMessage}</p>}
-                <p className="driver-privacy-note">Draft details remain in this tab only; they are not saved or sent. Do not include passwords, one-time codes, full payment-card numbers, or Social Security numbers.</p>
+                {speechMessage && <p className="driver-status" role="status">{speechMessage}</p>}
+                <p className="driver-privacy-note">Draft details remain in this tab only; they are not saved or sent. Read-aloud uses one browser/device English voice and does not use Qwen or upload audio. Speech-to-text requires a separate provider and is not connected yet. Do not include passwords, one-time codes, full payment-card numbers, or Social Security numbers.</p>
               </section>
 
               <aside className="driver-card driver-preview-card">
