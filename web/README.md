@@ -1,64 +1,73 @@
-# Agent Army
+# Agent Army web application
 
-The web catalog for this repository: pick an agent team and see its org chart on an infinite canvas, with the little people from the office sim.
+The repository’s static web app now has three workspaces: the original agent org-chart catalog, a local-first driver toolkit, and a DASH Car Wash business starter. The business and driver workspaces are prototypes; they do not connect to financial, rideshare, payment, crypto, or Arena.ai accounts.
 
-## How it works
+## Workspaces
 
-- **Team list** (left on desktop; the home screen on phones): every chart, grouped by what the team does (Go-to-market, Build, Small teams). Search by team or role ("Designer"). Click a team to show it. Desktop opens on the first team; on phones a picked team replaces the list until **← Teams**.
-- **Canvas**: the team → its lead(s) → their reports, from `chart.json`. Orchestrators wear gold. Teams with routines show a clock and a count.
-- **Team panel**: copy the one-line import prompt (`Import <id> from https://github.com/serenakeyitan/agent-org-chart`, which any agent can follow via `PROTOCOL.md`), copy `chart.json`, view it on GitHub, and see the team's routines. Click a bot for its summary and **Copy this bot**.
-- **Routines**: each routine shows its schedule and its cron expression (`routines[].cron`); click one to copy that line, or **Copy all as crontab**. Event-driven routines (`routines[].trigger`) show as events with no cron.
-- **Links**: `#/?team=sdr` and `#/?team=sdr&role=email`. Older links (`#/sdr`, `#/?hired=…`) still open the right team.
-- **Driver toolkit**: `#/driver-tools` opens an independent, local-first prototype with an earnings estimator, appeal-draft workspace, and authorized-integration checklist. It does not connect to Uber or Mystro, submit appeals, alter accounts/pay, or unlock paid features. Planner assumptions and checklist progress stay in local browser storage; appeal details stay in the current page session.
-- **Business starter**: `#/business` opens a DASH Car Wash business skeleton with an editable service menu and rideshare-driver service line. It uses local demo setup only; booking, payments, rideshare, digital-asset, and Arena.ai services are not connected. “Genesis Tencen / ABI OMNI 1000” remains unverified; the proposed read-only contract is documented in [`../docs/integrations/readonly-digital-assets.md`](../docs/integrations/readonly-digital-assets.md).
-- **Canvas controls**: drag or scroll to pan, ⌘/Ctrl + scroll or pinch to zoom, **Fit all** to reset.
-- **Team order**: set in `src/lib/catalog.ts`. A chart missing from that list still appears, under "More teams".
+### Org-chart catalog — `#/`
+
+Browse the charts under `../charts/`, search by team or role, inspect reporting lines on the canvas, and copy chart import prompts, JSON, bot instructions, or routines. Chart JSON remains the source of truth for roles and team structure.
+
+### DASH Car Wash business starter — `#/business`
+
+A configurable business skeleton with:
+
+- a local business profile and editable draft service menu;
+- car-wash workflows for individual rideshare drivers and fleet partners;
+- a connector registry for booking/POS, rideshare, payments, and digital-asset data;
+- provider-neutral, **read-only** adapter contracts in `src/lib/business-adapters.ts`.
+
+Profile and service-menu edits are saved in this browser’s local storage. The service list is a starter template, not a published price list or live booking system. There are currently **zero live provider connections**.
+
+### Driver toolkit — `#/driver-tools`
+
+- Earnings estimator with editable assumptions and client-side CSV import (`gross,miles,online_hours`). The CSV is parsed in the browser, not uploaded.
+- Appeal-preparation workspace that creates a text draft for the user to review and submit through official support. Appeal details are not persisted or submitted.
+- Integration-readiness checklist and brief. Checklist progress is saved locally; the page makes no provider calls.
+
+Planner assumptions are saved locally. These features do not access driver accounts, alter platform pay/settings, bypass paid features, or submit appeals.
+
+## Integrations and privacy boundaries
+
+- This is a **static client-side app**. It has no backend, OAuth flow, bank connector, payment processor, provider proxy, or live API integration. The catalog fetches its bundled chart JSON from the same origin; business/driver workspaces use local data.
+- The adapter contracts in `src/lib/business-adapters.ts` describe read-only operations only. The digital-asset interface is specified for current asset metadata/quotes, uses a fixed response envelope, and excludes stored quote history, user-history personalization, wallet credentials, and transaction methods. No provider implementation is connected.
+- “Genesis Tencen / ABI OMNI 1000” is an unverified provider/spec label. No endpoint, ABI, chain, contract address, or live connector is assumed. The routes in [`../docs/integrations/readonly-digital-assets.md`](../docs/integrations/readonly-digital-assets.md) are **proposed app-owned routes, not working endpoints**.
+- This repository cannot change Arena.ai’s platform defaults or private services. It also does not automate repository merges.
+- Never place API keys, private keys, seed phrases, bank credentials, or other secrets in client code, Git, or chat. A live connector requires current official docs, explicit authorization, and an appropriate server-side secret design.
 
 ## Development
 
 ```bash
 cd web
-npm install
+npm ci
 npm run dev
 ```
 
-The dev server runs at http://localhost:5173 by default.
+Vite serves the app at `http://localhost:5173` by default. For a workspace link, use `#/business` or `#/driver-tools` after the origin.
 
-## Build
+## Validation and build
 
 ```bash
 npm run build
+npm run lint
+npm run validate
+npm audit
 ```
 
-The build output is in `dist/`. During build, chart data is copied from `../charts/` to the public folder.
+- `build` runs TypeScript project checks and creates the static site in `dist/`.
+- `lint` runs Oxlint.
+- `validate` checks all chart JSON files against the repository schema.
+- `npm audit` checks the locked dependency tree.
 
-## Deploy to GitHub Pages
+The current site can be deployed to any static host. During build, Vite copies the chart JSON files from `../charts/` into `dist/charts/`.
 
-The app is configured for static deployment. After building:
+## Source layout
 
-1. The `dist/` folder contains all static files
-2. Charts are bundled at `dist/charts/`
-3. Can be deployed to GitHub Pages, Vercel, Netlify, or any static host
-
-For GitHub Pages, you can use the `gh-pages` package:
-
-```bash
-npm install -D gh-pages
-npx gh-pages -d dist
-```
-
-Or configure GitHub Actions to deploy from `web/dist`.
-
-## Architecture
-
-- **Vite + React + TypeScript** — fast builds and type safety
-- **Tailwind CSS** — utility-first styling with soft neutral palette
-- **Chart data** — loaded from `charts/index.json` and individual `chart.json` files
-- **No hardcoded data** — all role information comes from the source chart files
-
-## Design
-
-- Quiet, comfortable UI with soft neutrals and one accent color
-- Responsive layout: side panel stacks below chart on mobile
-- Smooth highlight/dim transitions when selecting roles
-- Light/dark mode support via system preference
+- `src/App.tsx` — route selection and org-chart catalog shell.
+- `src/BusinessWorkspace.tsx`, `src/business-workspace.css` — DASH Car Wash starter.
+- `src/DriverWorkspace.tsx`, `src/driver-tools.css` — driver planning and appeal-prep tools.
+- `src/lib/business-adapters.ts` — provider-neutral read-only API contracts and connector status definitions.
+- `src/lib/route.ts` — hash routes for catalog, business starter, and driver toolkit.
+- `src/components/` — catalog canvas, picker, and team panel.
+- `../charts/` — validated org-chart packages.
+- `../docs/integrations/readonly-digital-assets.md` — digital-asset API/ABI notes and requirements before live integration.
