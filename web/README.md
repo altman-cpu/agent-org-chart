@@ -34,7 +34,7 @@ Planner assumptions are saved locally. These features do not access driver accou
 - The adapter contracts in `src/lib/business-adapters.ts` describe read-only operations only. The digital-asset interface is specified for current asset metadata/quotes, uses a fixed response envelope, and excludes stored quote history, user-history personalization, wallet credentials, and transaction methods. No provider implementation is connected.
 - “Genesis Tencen / ABI OMNI 1000” is an unverified provider/spec label. No endpoint, ABI, chain, contract address, or live connector is assumed. The routes in [`../docs/integrations/readonly-digital-assets.md`](../docs/integrations/readonly-digital-assets.md) are **proposed app-owned routes, not working endpoints**.
 - Proposed business read-only routes and synthetic request/response examples are documented in [`../docs/integrations/business-api-payloads.md`](../docs/integrations/business-api-payloads.md). `npm run validate:api` validates 100 synthetic cases; `npm run simulate:api` repeats them for 10 bounded local cycles. Neither makes network calls, creates bookings, or merges PRs.
-- This repository cannot change Arena.ai’s platform defaults or private services. It also does not automate repository merges.
+- This repository cannot change Arena.ai’s platform defaults or private services. GitHub Actions (`../.github/workflows/validate.yml`) runs the validation suite on pull requests and pushes to `main`; passing checks do not merge PRs or make bookings.
 - Never place API keys, private keys, seed phrases, bank credentials, or other secrets in client code, Git, or chat. A live connector requires current official docs, explicit authorization, and an appropriate server-side secret design.
 
 ## Development
