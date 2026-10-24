@@ -65,6 +65,8 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
+    host: '0.0.0.0',
+    allowedHosts: ['.e2b.app'],
     fs: {
       allow: ['..']
     }

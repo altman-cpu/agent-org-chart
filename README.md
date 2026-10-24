@@ -4,13 +4,31 @@
 
 Portable org charts you can import on any agent platform with a spawn CLI. **Pick one focused org** that matches your use case — each chart is a small, importable team pattern.
 
-Works with Grok Bot, OpenAI dots, and any agent that can create teammates or background agents. Browse them at [agent-org-chart-ecru.vercel.app](https://agent-org-chart-ecru.vercel.app).
+Works with Grok Bot, OpenAI dots, and any agent that can create teammates or background agents. Browse the org-chart catalog at [agent-org-chart-ecru.vercel.app](https://agent-org-chart-ecru.vercel.app).
+
+The `web/` app also includes an experimental DASH Car Wash business starter and local-first rideshare driver toolkit. See the [web application guide](./web/README.md) for routes, development commands, data handling, and integration status.
 
 ![Awesome](https://awesome.re/badge.svg)
 ![Public](https://img.shields.io/badge/catalog-public-lightgrey.svg)
 
+## Application stack
+
+The browser app is a static React + TypeScript + Vite site. It provides:
+
+- `#/` — the portable agent org-chart catalog (the charts remain the source of truth for team roles).
+- `#/business` — a DASH Car Wash starter with an editable local service menu and rideshare-driver/fleet workflows.
+- `#/driver-tools` — a personal earnings estimator, client-side CSV summary import, appeal-draft workspace with device-native read-aloud, and integration checklist.
+
+**Integration status:** this is a front-end prototype with no backend and no live bank, Uber, Mystro, payment, crypto, or Arena.ai connections. Provider-neutral read-only contracts are defined in [`web/src/lib/business-adapters.ts`](./web/src/lib/business-adapters.ts); proposed business payloads and the 100-case validator / bounded repeat simulation are documented in [`docs/integrations/business-api-payloads.md`](./docs/integrations/business-api-payloads.md). The digital-asset contract and verification requirements are in [`docs/integrations/readonly-digital-assets.md`](./docs/integrations/readonly-digital-assets.md). “Genesis Tencen / ABI OMNI 1000” remains unverified; do not assume endpoints, an ABI, chain, or contract address. The digital-asset design excludes past analytics, user-history personalization, wallet credentials, and transactions. The app cannot change Arena.ai defaults or automate cross-repository merges; code changes use the normal GitHub pull-request review process. GitHub Actions validates builds, charts, and synthetic payloads on pull requests and pushes to `main`; successful checks do not auto-merge.
+
+Local business profile/service-menu edits and driver planner assumptions are stored in browser local storage. Appeal drafts stay in the current page session. CSV files are parsed in the browser and are not uploaded.
+
+For setup and validation, see [web/README.md](./web/README.md).
+
 ## Table of Contents
 
+- [Application stack](#application-stack)
+- [Web application guide](./web/README.md)
 - [101](#101) — 101 team
 - [Customer Support](#customer-support) — Customer support team
 - [Engineering](#engineering) — Engineering team

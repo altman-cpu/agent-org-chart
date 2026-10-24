@@ -164,6 +164,19 @@ button.node-role:hover { border: 0; }
 .gh-link svg { width: 18px; height: 18px; fill: currentColor; }
 .gh-link.is-compact { margin-left: auto; padding: 7px; }
 .picker-head p { font-size: 13.5px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.driver-tool-launcher {
+  display: flex; align-items: center; gap: 10px; width: 100%; margin-top: 4px; padding: 9px 10px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); text-align: left; cursor: pointer;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.driver-tool-launcher:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateY(-1px); }
+.business-tool-launcher .driver-tool-symbol { background: var(--lead); color: #fff; }
+.business-tool-launcher:hover { border-color: var(--lead); }
+.driver-tool-symbol { display: grid; place-items: center; width: 29px; height: 29px; flex: none; border-radius: 8px; background: var(--ink); color: var(--bg-card); font-size: 16px; font-weight: 650; }
+.driver-tool-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 3px; }
+.driver-tool-copy strong { font-size: 12.5px; }
+.driver-tool-copy small { color: var(--ink-3); font-size: 11px; }
+.driver-tool-arrow { color: var(--accent); font-size: 17px; }
 .picker > input {
   margin: 0 16px 8px; font: inherit; font-size: 14px; color: var(--ink); background: var(--bg);
   border: 1px solid var(--line); border-radius: 9px; padding: 9px 12px;

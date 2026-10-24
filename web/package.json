@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "validate": "node scripts/validate-charts.mjs"
+    "validate": "node scripts/validate-charts.mjs",
+    "validate:api": "node scripts/validate-api-payloads.mjs",
+    "simulate:api": "node scripts/validate-api-payloads.mjs --cycles=10"
   },
   "dependencies": {
     "react": "^19.2.8",
