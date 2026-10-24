@@ -4,6 +4,8 @@ import Canvas, { type Focus } from './components/Canvas'
 import Picker from './components/Picker'
 import TeamPanel from './components/TeamPanel'
 import GitHubLink from './components/GitHubLink'
+import BusinessWorkspace from './BusinessWorkspace'
+import DriverWorkspace from './DriverWorkspace'
 import { buildTeams, importPrompt } from './lib/catalog'
 import { copyText, roleInstruction } from './lib/copy'
 import { useRoute, type Route } from './lib/route'
@@ -57,8 +59,11 @@ function App() {
   const byId = useMemo(() => new Map(teams.map(t => [t.chart.id, t])), [teams])
   const picked = route.teamId ? byId.get(route.teamId) ?? null : null
   // Desktop never shows an empty canvas: with nothing picked, show the first team.
-  // Phones use the list as their home screen instead.
-  const team = picked ?? (narrow || route.teamId ? null : teams[0] ?? null)
+  // Phones use the list as their home screen instead. The driver workspace is a
+  // separate view and must not inherit the catalog's default team.
+  const team = route.view === 'catalog'
+    ? picked ?? (narrow || route.teamId ? null : teams[0] ?? null)
+    : null
   const layout = useMemo(() => layoutTree(team, narrow), [team, narrow])
 
   const focus: Focus = useMemo(() => {
@@ -89,8 +94,12 @@ function App() {
   )
 
   useEffect(() => {
-    document.title = team ? `${team.chart.title} · Agent Army` : 'Agent Army — agent org charts'
-  }, [team])
+    document.title = route.view === 'business'
+      ? 'DASH Car Wash · Agent Army'
+      : route.view === 'driver-tools'
+        ? 'Driver toolkit · Agent Army'
+        : team ? `${team.chart.title} · Agent Army` : 'Agent Army — agent org charts'
+  }, [route.view, team])
 
   const go = useCallback((r: Partial<Route>) => navigate({ ...routeRef.current, ...r }), [navigate])
 
@@ -103,7 +112,9 @@ function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [go])
 
-  const pickTeam = (id: string) => go({ teamId: id, roleId: null })
+  const pickTeam = (id: string) => go({ view: 'catalog', teamId: id, roleId: null })
+  const openDriverTools = () => go({ view: 'driver-tools', teamId: null, roleId: null })
+  const openBusinessWorkspace = () => go({ view: 'business', teamId: null, roleId: null })
 
   const onRole = (teamId: string, roleId: string) => {
     const r = routeRef.current
@@ -129,6 +140,19 @@ function App() {
     toast(ok ? `${role.name} copied` : 'Copy failed')
   }
 
+  if (route.view === 'business') {
+    return (
+      <BusinessWorkspace
+        onBack={() => go({ view: 'catalog', teamId: null, roleId: null })}
+        onOpenDriverTools={openDriverTools}
+      />
+    )
+  }
+
+  if (route.view === 'driver-tools') {
+    return <DriverWorkspace onBack={() => go({ view: 'catalog', teamId: null, roleId: null })} />
+  }
+
   if (loadError) return <div className="center-msg">Couldn't load the org charts. Refresh to try again.</div>
   if (!charts) return <div className="center-msg">Loading org charts…</div>
 
@@ -147,7 +171,15 @@ function App() {
         onBackground={() => routeRef.current.roleId && go({ roleId: null })}
       />
 
-      <Picker teams={teams} openTeamId={team?.chart.id ?? null} query={query} onQuery={setQuery} onOpenTeam={pickTeam} />
+      <Picker
+        teams={teams}
+        openTeamId={team?.chart.id ?? null}
+        query={query}
+        onQuery={setQuery}
+        onOpenTeam={pickTeam}
+        onOpenDriverTools={openDriverTools}
+        onOpenBusinessWorkspace={openBusinessWorkspace}
+      />
 
       {team && (
         <header className="phone-bar">
