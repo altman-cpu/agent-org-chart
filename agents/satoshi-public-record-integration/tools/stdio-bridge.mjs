@@ -87,7 +87,18 @@ function runAction(request) {
         providerCalls: false,
         bookingWrites: false,
         scienceReview: manifest.integrations.scienceEvidenceReview.conclusion,
-        identity: 'public-record specialist; not Satoshi Nakamoto',
+        agentRoles: manifest.specialists.map(({ id, name, kind }) => ({
+          id,
+          label: name,
+          kind,
+          identityStatus: 'repository role label; not a verified human identity',
+        })),
+        pseudonymousAttribution: {
+          label: 'Satoshi Nakamoto',
+          status: 'public pseudonymous attribution; real-world identity not verified',
+        },
+        personalIdentityMatching: false,
+        motiveInference: false,
       },
     })
     return true

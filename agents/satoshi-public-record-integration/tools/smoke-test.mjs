@@ -47,6 +47,13 @@ for (const request of requests.slice(0, 4)) {
   assert.equal(requestEvents[1].ok, true)
 }
 
+const status = events.find(event => event.requestId === 'status-1' && event.event === 'result')
+assert.equal(status.data.personalIdentityMatching, false)
+assert.equal(status.data.motiveInference, false)
+assert.equal(status.data.agentRoles.length, 5)
+assert(status.data.agentRoles.every(role => role.identityStatus.includes('not a verified human identity')))
+assert(status.data.pseudonymousAttribution.status.includes('not verified'))
+
 const simulation = events.find(event => event.requestId === 'simulation-1' && event.event === 'result')
 assert(simulation.summary.some(line => line.includes('1000/1000')), 'Simulation result should expose the 1,000-case summary.')
 const blocked = events.find(event => event.requestId === 'blocked-1')

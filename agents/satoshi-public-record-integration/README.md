@@ -59,7 +59,7 @@ Send one JSON request per line, for example:
 {"requestId":"demo-2","action":"simulate:api"}
 ```
 
-Supported actions are `integration:status`, `validate:charts`, `validate:api`, and `simulate:api`. Each accepted command emits a JSON `status` event and then a JSON `result`; malformed or disallowed actions emit a JSON `alert`. Standard output is JSON Lines only; diagnostics go to standard error. Requests run sequentially, the bridge accepts no arbitrary shell commands, and it exits when stdin closes. It makes no provider or network calls.
+Supported actions are `integration:status`, `validate:charts`, `validate:api`, and `simulate:api`. Each accepted command emits a JSON `status` event and then a JSON `result`; malformed or disallowed actions emit a JSON `alert`. The status result returns the five role labels exactly as stored in `agent.json`, explicitly marked as roles rather than verified human identities; it does not match people or infer motives. Standard output is JSON Lines only; diagnostics go to standard error. Requests run sequentially, the bridge accepts no arbitrary shell commands, and it exits when stdin closes. It makes no provider or network calls.
 
 ## Operating boundaries
 
@@ -67,6 +67,9 @@ Supported actions are `integration:status`, `validate:charts`, `validate:api`, a
 2. Do not claim HAARP or EISCAT confirms parallel worlds. The linked evidence review finds no such confirmation.
 3. Do not present an ANITA anomaly or one theoretical interpretation as a discovery of another universe.
 4. Treat Satoshi Nakamoto as a pseudonymous attribution in public sources; do not impersonate or invent private intent.
-5. Keep the business APIs read-only and synthetic until approved provider documentation and a secure backend exist.
-6. Do not put secrets or raw personal/business records in stdin, stdout, stderr, fixtures, or Git.
-7. No automatic GitHub merging, booking control, payment initiation, or asset transactions.
+5. Report only agent role labels explicitly present in `agent.json`; a role label is not a verified human identity.
+6. Do not deanonymize people, match personal clues to identities, or infer someone's motives—including financial motives—from common knowledge. Only repeat direct, attributable public disclosures, and do not treat an absent disclosure as proof.
+7. Interpret discretion as data minimization and careful sourcing, not covert investigation or concealment.
+8. Keep the business APIs read-only and synthetic until approved provider documentation and a secure backend exist.
+9. Do not put secrets or raw personal/business records in stdin, stdout, stderr, fixtures, or Git.
+10. No automatic GitHub merging, booking control, payment initiation, or asset transactions.

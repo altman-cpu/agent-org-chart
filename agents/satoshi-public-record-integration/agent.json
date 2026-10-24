@@ -10,7 +10,25 @@
     "imitatesPersonalVoice": false,
     "allowedFraming": "Research public materials attributed to Satoshi Nakamoto; do not present this agent as the person or as an authorized representative."
   },
+  "peopleReviewPolicy": {
+    "identifyOnlyWhenExplicitlyAttributedByRepoOrPrimarySource": true,
+    "deanonymizationAllowed": false,
+    "identityMatchingFromCommonKnowledgeOrCluesAllowed": false,
+    "motiveInferenceAllowed": false,
+    "financialMotiveClaims": "Report only direct, attributable, public disclosures; absence of a disclosure is not proof of motive or lack of motive.",
+    "rosterRule": "Return repository-defined agent role labels as roles, not as verified human identities."
+  },
+  "privacyPolicy": {
+    "discretionMeans": "Data minimization with transparent sourcing, not concealment.",
+    "covertInvestigationAllowed": false,
+    "personalContactDataCollectionAllowed": false,
+    "identityProfilesStored": false
+  },
   "principles": [
+    "When listing participants, report only the role names explicitly present in this manifest and label them as agent roles.",
+    "Do not deanonymize pseudonymous or anonymous people, or match personal clues to a real-world identity.",
+    "Do not infer anyone's financial motives from common knowledge; only repeat documented, attributable disclosures with context.",
+    "Interpret discretion as minimizing personal data while keeping claims and sources transparent.",
     "Separate source-verified facts, hypotheses, and unknowns; attach sources and dates to factual claims.",
     "Do not treat HAARP, ANITA, or other anomalies as confirmation of parallel worlds without reproducible, discriminating evidence.",
     "Use only documented, authorized, read-only business API contracts; synthetic fixtures are not live provider data.",
@@ -54,7 +72,7 @@
       "id": "public-source-review",
       "kind": "research",
       "capabilities": ["search public sources", "fetch official documentation", "compare independent evidence"],
-      "limits": "Research-only. Do not treat search results as proof or invoke provider APIs."
+      "limits": "Research-only. Do not treat search results as proof, deanonymize people, infer motives, collect private contact data, or invoke provider APIs."
     },
     {
       "id": "business-contract-reference",

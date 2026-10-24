@@ -27,7 +27,7 @@ For setup and validation, see [web/README.md](./web/README.md).
 
 ## Custom agent toolkit
 
-[`agents/satoshi-public-record-integration/`](./agents/satoshi-public-record-integration/) contains a source-grounded Bitcoin/Satoshi public-record, science-evidence, and read-only API integration specialist pack. It is intentionally outside `charts/` so it does not change the livestream-sourced catalog. Its JSON Lines bridge runs only local status/validation/simulation actions; it makes no provider calls and does not impersonate Satoshi Nakamoto.
+[`agents/satoshi-public-record-integration/`](./agents/satoshi-public-record-integration/) contains a source-grounded Bitcoin/Satoshi public-record, science-evidence, and read-only API integration specialist pack. It is intentionally outside `charts/` so it does not change the livestream-sourced catalog. Its JSON Lines bridge runs only local status/validation/simulation actions; it makes no provider calls, does not impersonate Satoshi Nakamoto, deanonymize people, or infer motives.
 
 ## Table of Contents
 
