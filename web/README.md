@@ -33,6 +33,7 @@ Planner assumptions are saved locally. These features do not access driver accou
 - This is a **static client-side app**. It has no backend, OAuth flow, bank connector, payment processor, provider proxy, or live API integration. The catalog fetches its bundled chart JSON from the same origin; business/driver workspaces use local data.
 - The adapter contracts in `src/lib/business-adapters.ts` describe read-only operations only. The digital-asset interface is specified for current asset metadata/quotes, uses a fixed response envelope, and excludes stored quote history, user-history personalization, wallet credentials, and transaction methods. No provider implementation is connected.
 - “Genesis Tencen / ABI OMNI 1000” is an unverified provider/spec label. No endpoint, ABI, chain, contract address, or live connector is assumed. The routes in [`../docs/integrations/readonly-digital-assets.md`](../docs/integrations/readonly-digital-assets.md) are **proposed app-owned routes, not working endpoints**.
+- Proposed business read-only routes and synthetic request/response examples are documented in [`../docs/integrations/business-api-payloads.md`](../docs/integrations/business-api-payloads.md). `npm run validate:api` validates 100 synthetic cases and rejects unsafe variants; it makes no network calls and does not represent 100 live integrations.
 - This repository cannot change Arena.ai’s platform defaults or private services. It also does not automate repository merges.
 - Never place API keys, private keys, seed phrases, bank credentials, or other secrets in client code, Git, or chat. A live connector requires current official docs, explicit authorization, and an appropriate server-side secret design.
 
@@ -52,12 +53,14 @@ Vite serves the app at `http://localhost:5173` by default. For a workspace link,
 npm run build
 npm run lint
 npm run validate
+npm run validate:api
 npm audit
 ```
 
 - `build` runs TypeScript project checks and creates the static site in `dist/`.
 - `lint` runs Oxlint.
 - `validate` checks all chart JSON files against the repository schema.
+- `validate:api` checks 100 synthetic read-only business API payload cases and verifies rejection of unsafe variants; it makes no network calls.
 - `npm audit` checks the locked dependency tree.
 
 The current site can be deployed to any static host. During build, Vite copies the chart JSON files from `../charts/` into `dist/charts/`.

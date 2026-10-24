@@ -3,6 +3,20 @@
 // browser code must never hold provider secrets or call private endpoints directly.
 
 export type DateRange = { from: string; to: string }
+export interface DateRangeQuery extends DateRange {
+  limit?: number
+}
+
+// Proposed internal routes only. They are not implemented by the static client.
+export const PROPOSED_BUSINESS_READ_ROUTES = {
+  services: '/api/v1/business/services',
+  bookings: '/api/v1/business/bookings',
+  rideshareTripSummaries: '/api/v1/rideshare/trip-summaries',
+  settlementSummaries: '/api/v1/payments/settlement-summaries',
+  digitalAssets: '/api/v1/digital-assets/assets',
+  currentQuotes: '/api/v1/digital-assets/quotes',
+  integrationStatus: '/api/v1/integrations/status',
+} as const
 
 export interface BusinessServiceRecord {
   id: string
@@ -84,15 +98,15 @@ export const DIGITAL_ASSET_READ_POLICY = {
 // No account mutation, payout changes, trade execution, or asset transfers.
 export interface BookingAdapter {
   listServices(): Promise<ReadOnlyResponse<BusinessServiceRecord[]>>
-  listBookings(range: DateRange): Promise<ReadOnlyResponse<BookingRecord[]>>
+  listBookings(query: DateRangeQuery): Promise<ReadOnlyResponse<BookingRecord[]>>
 }
 
 export interface RideshareAdapter {
-  listTripSummaries(range: DateRange): Promise<ReadOnlyResponse<DriverTripSummary[]>>
+  listTripSummaries(query: DateRangeQuery): Promise<ReadOnlyResponse<DriverTripSummary[]>>
 }
 
 export interface PaymentsAdapter {
-  listSettlementSummaries(range: DateRange): Promise<ReadOnlyResponse<SettlementSummary[]>>
+  listSettlementSummaries(query: DateRangeQuery): Promise<ReadOnlyResponse<SettlementSummary[]>>
 }
 
 export interface DigitalAssetMarketDataAdapter {

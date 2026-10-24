@@ -1,0 +1,312 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposed business read-only API payload fixtures",
+  "description": "App-owned, mock-only GET request and fixed-envelope response examples. No provider endpoints are implied.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "oneOf": [
+      { "$ref": "#/$defs/servicesFixture" },
+      { "$ref": "#/$defs/bookingsFixture" },
+      { "$ref": "#/$defs/rideshareTripsFixture" },
+      { "$ref": "#/$defs/settlementsFixture" },
+      { "$ref": "#/$defs/assetsFixture" },
+      { "$ref": "#/$defs/currentQuotesFixture" },
+      { "$ref": "#/$defs/integrationStatusFixture" }
+    ]
+  },
+  "$defs": {
+    "baseFixture": {
+      "type": "object",
+      "required": ["caseId", "operation", "method", "path", "query", "response"],
+      "properties": {
+        "caseId": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string" },
+        "method": { "const": "GET" },
+        "path": { "type": "string" },
+        "query": { "type": "object" },
+        "response": { "$ref": "#/$defs/envelope" }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["provider", "observedAt", "verification"],
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "network": { "type": ["string", "null"] },
+        "observedAt": { "type": "string", "format": "date-time" },
+        "verification": { "enum": ["verified", "pending"] }
+      },
+      "additionalProperties": false
+    },
+    "envelope": {
+      "type": "object",
+      "required": ["schemaVersion", "mode", "source", "data", "warnings"],
+      "properties": {
+        "schemaVersion": { "const": "1.0" },
+        "mode": { "const": "read_only" },
+        "source": { "$ref": "#/$defs/source" },
+        "data": {},
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "businessService": {
+      "type": "object",
+      "required": ["id", "name", "description", "priceMinor", "currency", "active"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "priceMinor": { "type": ["integer", "null"], "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "active": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "booking": {
+      "type": "object",
+      "required": ["id", "serviceId", "scheduledAt", "status"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "serviceId": { "type": "string", "minLength": 1 },
+        "scheduledAt": { "type": "string", "format": "date-time" },
+        "status": { "enum": ["requested", "confirmed", "completed", "cancelled"] }
+      },
+      "additionalProperties": false
+    },
+    "tripSummary": {
+      "type": "object",
+      "required": ["providerTripId", "completedAt", "grossMinor", "currency", "miles", "onlineHours"],
+      "properties": {
+        "providerTripId": { "type": "string", "minLength": 1 },
+        "completedAt": { "type": "string", "format": "date-time" },
+        "grossMinor": { "type": "integer", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "miles": { "type": ["number", "null"], "minimum": 0 },
+        "onlineHours": { "type": ["number", "null"], "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "settlement": {
+      "type": "object",
+      "required": ["settlementId", "settledAt", "amountMinor", "currency", "status"],
+      "properties": {
+        "settlementId": { "type": "string", "minLength": 1 },
+        "settledAt": { "type": "string", "format": "date-time" },
+        "amountMinor": { "type": "integer", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "status": { "enum": ["pending", "paid", "reversed"] }
+      },
+      "additionalProperties": false
+    },
+    "assetMetadata": {
+      "type": "object",
+      "required": ["assetId", "symbol", "name", "network"],
+      "properties": {
+        "assetId": { "type": "string", "minLength": 1 },
+        "symbol": { "type": "string", "minLength": 1, "maxLength": 20 },
+        "name": { "type": "string", "minLength": 1 },
+        "network": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "assetQuote": {
+      "type": "object",
+      "required": ["assetId", "price", "currency", "observedAt"],
+      "properties": {
+        "assetId": { "type": "string", "minLength": 1 },
+        "price": { "type": "string", "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$" },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "observedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "connectorStatus": {
+      "type": "object",
+      "required": ["id", "status", "verification"],
+      "properties": {
+        "id": { "enum": ["booking", "rideshare", "payments", "digital-assets"] },
+        "status": { "enum": ["mock", "not-configured", "needs-docs", "connected-read-only"] },
+        "verification": { "enum": ["verified", "pending"] }
+      },
+      "additionalProperties": false
+    },
+    "responseWithArrayData": {
+      "allOf": [
+        { "$ref": "#/$defs/envelope" },
+        { "properties": { "data": { "type": "array", "maxItems": 100 } } }
+      ]
+    },
+    "servicesFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "services.list" },
+            "path": { "const": "/api/v1/business/services" },
+            "query": { "type": "object", "maxProperties": 0 },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/businessService" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "bookingsFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "bookings.list" },
+            "path": { "const": "/api/v1/business/bookings" },
+            "query": {
+              "type": "object",
+              "required": ["from", "to"],
+              "properties": {
+                "from": { "type": "string", "format": "date-time" },
+                "to": { "type": "string", "format": "date-time" },
+                "limit": { "type": "integer", "minimum": 1, "maximum": 100 }
+              },
+              "additionalProperties": false
+            },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/booking" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "rideshareTripsFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "rideshare.trips.list" },
+            "path": { "const": "/api/v1/rideshare/trip-summaries" },
+            "query": {
+              "type": "object",
+              "required": ["from", "to"],
+              "properties": {
+                "from": { "type": "string", "format": "date-time" },
+                "to": { "type": "string", "format": "date-time" },
+                "limit": { "type": "integer", "minimum": 1, "maximum": 100 }
+              },
+              "additionalProperties": false
+            },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/tripSummary" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "settlementsFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "payments.settlements.list" },
+            "path": { "const": "/api/v1/payments/settlement-summaries" },
+            "query": {
+              "type": "object",
+              "required": ["from", "to"],
+              "properties": {
+                "from": { "type": "string", "format": "date-time" },
+                "to": { "type": "string", "format": "date-time" },
+                "limit": { "type": "integer", "minimum": 1, "maximum": 100 }
+              },
+              "additionalProperties": false
+            },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/settlement" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "assetsFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "digital-assets.assets.list" },
+            "path": { "const": "/api/v1/digital-assets/assets" },
+            "query": {
+              "type": "object",
+              "properties": { "search": { "type": "string", "maxLength": 80 } },
+              "additionalProperties": false
+            },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/assetMetadata" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "currentQuotesFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "digital-assets.quotes.current" },
+            "path": { "const": "/api/v1/digital-assets/quotes" },
+            "query": {
+              "type": "object",
+              "required": ["assetIds"],
+              "properties": {
+                "assetIds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "items": { "type": "string", "minLength": 1 }
+                }
+              },
+              "additionalProperties": false
+            },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/assetQuote" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "integrationStatusFixture": {
+      "allOf": [
+        { "$ref": "#/$defs/baseFixture" },
+        {
+          "properties": {
+            "operation": { "const": "integrations.status" },
+            "path": { "const": "/api/v1/integrations/status" },
+            "query": { "type": "object", "maxProperties": 0 },
+            "response": {
+              "allOf": [
+                { "$ref": "#/$defs/responseWithArrayData" },
+                { "properties": { "data": { "items": { "$ref": "#/$defs/connectorStatus" } } } }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

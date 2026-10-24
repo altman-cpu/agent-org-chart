@@ -1,0 +1,105 @@
+[
+  {
+    "caseId": "services-list-demo",
+    "operation": "services.list",
+    "method": "GET",
+    "path": "/api/v1/business/services",
+    "query": {},
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "demo-fixture", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "id": "quick-wash-demo", "name": "Example quick wash", "description": "Synthetic fixture only.", "priceMinor": null, "currency": "USD", "active": true }],
+      "warnings": ["Example fixture only; no provider is connected."]
+    }
+  },
+  {
+    "caseId": "bookings-list-demo",
+    "operation": "bookings.list",
+    "method": "GET",
+    "path": "/api/v1/business/bookings",
+    "query": { "from": "2026-10-01T00:00:00Z", "to": "2026-10-31T23:59:59Z", "limit": 25 },
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "demo-fixture", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "id": "booking-demo-1", "serviceId": "quick-wash-demo", "scheduledAt": "2026-10-25T16:00:00Z", "status": "confirmed" }],
+      "warnings": ["Example fixture only; no booking has been created."]
+    }
+  },
+  {
+    "caseId": "rideshare-trip-summaries-demo",
+    "operation": "rideshare.trips.list",
+    "method": "GET",
+    "path": "/api/v1/rideshare/trip-summaries",
+    "query": { "from": "2026-10-01T00:00:00Z", "to": "2026-10-31T23:59:59Z", "limit": 25 },
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "demo-fixture", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "providerTripId": "trip-demo-1", "completedAt": "2026-10-23T18:00:00Z", "grossMinor": 2800, "currency": "USD", "miles": 12.5, "onlineHours": 1.2 }],
+      "warnings": ["Example fixture only; no driver account was accessed."]
+    }
+  },
+  {
+    "caseId": "settlement-summaries-demo",
+    "operation": "payments.settlements.list",
+    "method": "GET",
+    "path": "/api/v1/payments/settlement-summaries",
+    "query": { "from": "2026-10-01T00:00:00Z", "to": "2026-10-31T23:59:59Z", "limit": 25 },
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "demo-fixture", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "settlementId": "settlement-demo-1", "settledAt": "2026-10-23T19:00:00Z", "amountMinor": 5000, "currency": "USD", "status": "paid" }],
+      "warnings": ["Example fixture only; no payment account was accessed or changed."]
+    }
+  },
+  {
+    "caseId": "digital-assets-list-demo",
+    "operation": "digital-assets.assets.list",
+    "method": "GET",
+    "path": "/api/v1/digital-assets/assets",
+    "query": { "search": "EXAMPLE" },
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "unverified-demo", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "assetId": "example-asset", "symbol": "EXAMPLE", "name": "Example asset", "network": null }],
+      "warnings": ["Synthetic metadata only; Genesis Tencen / ABI OMNI 1000 is unverified."]
+    }
+  },
+  {
+    "caseId": "digital-assets-current-quotes-demo",
+    "operation": "digital-assets.quotes.current",
+    "method": "GET",
+    "path": "/api/v1/digital-assets/quotes",
+    "query": { "assetIds": ["example-asset"] },
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "unverified-demo", "network": "demo", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [{ "assetId": "example-asset", "price": "1.23450000", "currency": "USD", "observedAt": "2026-10-24T12:00:00Z" }],
+      "warnings": ["Synthetic current-value fixture only; no history, personalization, wallet access, or transactions."]
+    }
+  },
+  {
+    "caseId": "integration-status-demo",
+    "operation": "integrations.status",
+    "method": "GET",
+    "path": "/api/v1/integrations/status",
+    "query": {},
+    "response": {
+      "schemaVersion": "1.0",
+      "mode": "read_only",
+      "source": { "provider": "app-registry", "network": "local", "observedAt": "2026-10-24T12:00:00Z", "verification": "pending" },
+      "data": [
+        { "id": "booking", "status": "mock", "verification": "pending" },
+        { "id": "rideshare", "status": "needs-docs", "verification": "pending" },
+        { "id": "payments", "status": "mock", "verification": "pending" },
+        { "id": "digital-assets", "status": "not-configured", "verification": "pending" }
+      ],
+      "warnings": ["This is a synthetic registry fixture; there are zero live connections."]
+    }
+  }
+]
