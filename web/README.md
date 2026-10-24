@@ -55,6 +55,8 @@ npm run lint
 npm run validate
 npm run validate:api
 npm run simulate:api
+npm run validate:agent
+npm run agent:stdio:smoke
 npm audit
 ```
 
@@ -63,6 +65,8 @@ npm audit
 - `validate` checks all chart JSON files against the repository schema.
 - `validate:api` checks 100 synthetic read-only business API payload cases and verifies rejection of unsafe variants; it makes no network calls.
 - `simulate:api` repeats those 100 cases for 10 bounded cycles (1,000 valid checks) without provider, booking, GitHub, or merge actions.
+- `validate:agent` checks the custom agent manifest against the existing adapter contract, repo references, and local command names.
+- `agent:stdio:smoke` tests the agent package's JSON Lines stdin/stdout bridge, including status/results and a blocked arbitrary command.
 - `npm audit` checks the locked dependency tree.
 
 The current site can be deployed to any static host. During build, Vite copies the chart JSON files from `../charts/` into `dist/charts/`.

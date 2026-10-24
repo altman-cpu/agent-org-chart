@@ -46,6 +46,12 @@ jobs:
       - name: Validate synthetic API payloads
         run: npm run validate:api
 
+      - name: Validate the custom agent package
+        run: npm run validate:agent
+
+      - name: Smoke-test controlled stdin and stdout bridge
+        run: npm run agent:stdio:smoke
+
       - name: Run bounded local payload simulation
         run: npm run simulate:api
 
