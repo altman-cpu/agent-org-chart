@@ -19,15 +19,20 @@ The browser app is a static React + TypeScript + Vite site. It provides:
 - `#/business` — a DASH Car Wash starter with an editable local service menu and rideshare-driver/fleet workflows.
 - `#/driver-tools` — a personal earnings estimator, client-side CSV summary import, appeal-draft workspace with device-native read-aloud, and integration checklist.
 
-**Integration status:** this is a front-end prototype with no backend and no live bank, Uber, Mystro, payment, crypto, or Arena.ai connections. Provider-neutral read-only contracts are defined in [`web/src/lib/business-adapters.ts`](./web/src/lib/business-adapters.ts); proposed business payloads and the 100-case validator / bounded repeat simulation are documented in [`docs/integrations/business-api-payloads.md`](./docs/integrations/business-api-payloads.md). The digital-asset contract and verification requirements are in [`docs/integrations/readonly-digital-assets.md`](./docs/integrations/readonly-digital-assets.md). “Genesis Tencen / ABI OMNI 1000” remains unverified; do not assume endpoints, an ABI, chain, or contract address. The digital-asset design excludes past analytics, user-history personalization, wallet credentials, and transactions. The app cannot change Arena.ai defaults or automate cross-repository merges; code changes use the normal GitHub pull-request review process. GitHub Actions validates builds, charts, and synthetic payloads on pull requests and pushes to `main`; successful checks do not auto-merge.
+**Integration status:** this is a front-end prototype with no backend and no live bank, Uber, Mystro, payment, crypto, or Arena.ai connections. Provider-neutral read-only contracts are defined in [`web/src/lib/business-adapters.ts`](./web/src/lib/business-adapters.ts); proposed business payloads and the 100-case validator / bounded repeat simulation are documented in [`docs/integrations/business-api-payloads.md`](./docs/integrations/business-api-payloads.md). The digital-asset contract and verification requirements are in [`docs/integrations/readonly-digital-assets.md`](./docs/integrations/readonly-digital-assets.md). The evidence review of HAARP, related ionospheric facilities, and parallel-world claims is in [`docs/research/haarp-and-parallel-worlds-evidence-review.md`](./docs/research/haarp-and-parallel-worlds-evidence-review.md). “Genesis Tencen / ABI OMNI 1000” remains unverified; do not assume endpoints, an ABI, chain, or contract address. The digital-asset design excludes past analytics, user-history personalization, wallet credentials, and transactions. The app cannot change Arena.ai defaults or automate cross-repository merges; code changes use the normal GitHub pull-request review process. GitHub Actions validates builds, charts, synthetic payloads, and the custom agent's JSON Lines bridge on pull requests and pushes to `main`; successful checks do not auto-merge.
 
 Local business profile/service-menu edits and driver planner assumptions are stored in browser local storage. Appeal drafts stay in the current page session. CSV files are parsed in the browser and are not uploaded.
 
 For setup and validation, see [web/README.md](./web/README.md).
 
+## Custom agent toolkit
+
+[`agents/satoshi-public-record-integration/`](./agents/satoshi-public-record-integration/) contains a source-grounded Bitcoin/Satoshi public-record, science-evidence, and read-only API integration specialist pack. It is intentionally outside `charts/` so it does not change the livestream-sourced catalog. Its JSON Lines bridge runs only local status/validation/simulation actions; it makes no provider calls and does not impersonate Satoshi Nakamoto.
+
 ## Table of Contents
 
 - [Application stack](#application-stack)
+- [Custom agent toolkit](#custom-agent-toolkit)
 - [Web application guide](./web/README.md)
 - [101](#101) — 101 team
 - [Customer Support](#customer-support) — Customer support team
