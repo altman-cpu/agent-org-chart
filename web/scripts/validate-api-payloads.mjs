@@ -48,13 +48,14 @@ function makeFixture(example, index) {
   return fixture
 }
 
-const fixtures = Array.from({ length: 100 }, (_, index) => makeFixture(examples[index % examples.length], index))
-if (!validate(fixtures)) {
-  console.error('✗ Valid fixtures failed schema validation')
-  for (const error of validate.errors ?? []) console.error(`  ${error.instancePath || '/'} ${error.message}`)
+const cyclesArgument = process.argv.find(argument => argument.startsWith('--cycles='))
+const cycles = cyclesArgument ? Number(cyclesArgument.slice('--cycles='.length)) : 1
+if (!Number.isInteger(cycles) || cycles < 1 || cycles > 100) {
+  console.error('Use --cycles=1..100. The simulation is deliberately bounded.')
   process.exit(1)
 }
 
+const fixtures = Array.from({ length: 100 }, (_, index) => makeFixture(examples[index % examples.length], index))
 const invalidCases = [
   (() => { const item = structuredClone(fixtures[0]); item.method = 'POST'; return item })(),
   (() => { const item = structuredClone(fixtures[0]); item.query.apiKey = 'not-allowed'; return item })(),
@@ -63,13 +64,21 @@ const invalidCases = [
   (() => { const item = structuredClone(fixtures[5]); item.response.mode = 'write'; return item })(),
 ]
 
-for (const [index, fixture] of invalidCases.entries()) {
-  if (validate([fixture])) {
-    console.error(`✗ Safety case ${index + 1} was unexpectedly accepted`)
+for (let cycle = 0; cycle < cycles; cycle += 1) {
+  if (!validate(fixtures)) {
+    console.error(`✗ Valid fixtures failed schema validation on cycle ${cycle + 1}`)
+    for (const error of validate.errors ?? []) console.error(`  ${error.instancePath || '/'} ${error.message}`)
     process.exit(1)
+  }
+
+  for (const [index, fixture] of invalidCases.entries()) {
+    if (validate([fixture])) {
+      console.error(`✗ Safety case ${index + 1} was unexpectedly accepted on cycle ${cycle + 1}`)
+      process.exit(1)
+    }
   }
 }
 
-console.log(`✓ ${fixtures.length}/${fixtures.length} synthetic read-only payloads valid`)
-console.log(`✓ ${invalidCases.length}/${invalidCases.length} unsafe or malformed payloads rejected`)
-console.log('No external API calls were made.')
+console.log(`✓ ${fixtures.length} synthetic payloads x ${cycles} cycles = ${fixtures.length * cycles}/${fixtures.length * cycles} valid checks`)
+console.log(`✓ ${invalidCases.length} safety cases x ${cycles} cycles = ${invalidCases.length * cycles}/${invalidCases.length * cycles} rejected`)
+console.log('Local-only simulation complete. No provider, GitHub, booking, or merge actions were performed.')

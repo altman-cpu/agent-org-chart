@@ -69,6 +69,8 @@ The payload shape is checked by [`schemas/business-read-only-api.schema.json`](.
 
 `cd web && npm run validate:api` generates and validates **100 synthetic request/response cases** against the schema, then checks that five unsafe or malformed variants are rejected (including write methods, credentials in query fields, non-string asset prices, quote-history fields, and non-read-only modes). It makes **zero network calls**. Fixtures are synthetic and must not be presented as real provider data.
 
+`npm run simulate:api` repeats the same bounded suite for 10 cycles: 1,000 valid fixture checks and 50 negative safety checks. The simulation is local-only; it does not call providers, create bookings, alter GitHub, visualize release state, or merge pull requests. There is no automatic merge trigger.
+
 The test count is a payload/schema check—not a claim of 100% code coverage or 100 live API integrations. Speech-to-text is a separate external integration and remains unconfigured until a specific provider, model ID, and official documentation are supplied.
 
 ## Requirements before live integration
