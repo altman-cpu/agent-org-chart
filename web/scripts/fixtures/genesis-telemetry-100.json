@@ -1,0 +1,3185 @@
+{
+  "protocol": "ABI_API_1",
+  "truthAnchor": "ABI_API_1LOOKATCODEATNO-ONEHADTHEABSOLUTETRUTHEXCEPTFORMYSELF",
+  "simulation": true,
+  "fixtures": [
+    {
+      "caseId": "genesis-fixture-001",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_aa0ef4fa2b19f5812e953723c00088a426a23417",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_5c68d234b3ea7631a8664b98c2975bbdbd239aa9",
+        "amount": 0,
+        "gasFee": 4600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_aa0ef4fa2b19"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-002",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_2dd0778e263210f2db37f3c9c06f87c18e6e5cac",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_3370de5d86805bedd54841dac7ad607c4f6fa38a",
+        "amount": 11000,
+        "gasFee": 1700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_2dd0778e2632"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-003",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c74dfd23c8741a1fe53cee7ddf992f93ebc52102",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_cfb5a142434d41756df090cb21571361140e3143",
+        "amount": 12000,
+        "gasFee": 3600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c74dfd23c874"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-004",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_4c837790856a9fae7586d647e87e90bf2377b1b3",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b559ea82461fb9d57149a60be20761f8518bae38",
+        "amount": 13000,
+        "gasFee": 2200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_4c837790856a"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-005",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c79745132d69d51a6d5499e92aa64dd9e8ff4009",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c80614d5a621c58ad2ef1bf236424ea2950f8787",
+        "amount": 14000,
+        "gasFee": 3600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c79745132d69"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-006",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_0a85cd39d9f8e64797996cd793abd01fae1499b7",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_4a25ef300a8941d18c98d04488cd0c832eaf9fbb",
+        "amount": 15000,
+        "gasFee": 1400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_0a85cd39d9f8"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-007",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_4a8c7cfa11682abd026f9a23b9d8b5f19d90f908",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_7ee9c4b6885a88197f3fa841e5e6b26906f89967",
+        "amount": 16000,
+        "gasFee": 1400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_4a8c7cfa1168"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-008",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_9836b47f1f8e5a679f8267c9c20eb15fbb7ce3f2",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_aa948e3b8c85291ca286f36f56c7bcefe1b29dda",
+        "amount": 17000,
+        "gasFee": 2200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_9836b47f1f8e"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-009",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c97f0a2af21c5b40b211b605089f1af60629087a",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_6876b396ee3fc7bd0a07750610c10777608642e3",
+        "amount": 18000,
+        "gasFee": 3900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c97f0a2af21c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-010",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_488fe2cf3a7d32b939ed9c4df9fb0e6c9e83174c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b2cffd80e9db5067ca62d00886240c051d5b4c56",
+        "amount": 19000,
+        "gasFee": 1500,
+        "timestamp": 1792892079596,
+        "status": "FAILED",
+        "signature": "sig_det_488fe2cf3a7d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-011",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_074743a9952179e6845a931c1a9150d79fa6bdd0",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b37069b81cdf701cea1a3f33f1df5940333b6d39",
+        "amount": 0,
+        "gasFee": 300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_074743a99521"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-012",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_7eacf640f4feb26b7b7d0ca0790d06a2a9dd8ecb",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b21b32b828456c1a2f5361634326279ca2258275",
+        "amount": 21000,
+        "gasFee": 2800,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_7eacf640f4fe"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-013",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_2ce954d6715b81e342dd34276b9c99c3f6500e6e",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_f75e55204c404a2c44af878d3e1089bb89882b0e",
+        "amount": 22000,
+        "gasFee": 1900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_2ce954d6715b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-014",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_e2da89598830e392929ba5f9df1217642873a6f9",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_80f4490491d60a69a4faff3890166f4e247df4f1",
+        "amount": 23000,
+        "gasFee": 3900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_e2da89598830"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-015",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_da115bba0d7d3d1ed75844362bee26f6b07d9c21",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_e39a96c5d9bdeb2a9f6bb621795b0adb8e0615ee",
+        "amount": 24000,
+        "gasFee": 1300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_da115bba0d7d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-016",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_9d328eeb9c43d9734b16c79c5e1b912d121e6714",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_2f81e99b099fbd6bd15ad8253a5ad6db01f25176",
+        "amount": 25000,
+        "gasFee": 1500,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_9d328eeb9c43"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-017",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_5931fa11c298aeccc4569b06707f9616b76476c5",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_135cae02cfd2732e6a5aa575aee80a314729a992",
+        "amount": 26000,
+        "gasFee": 600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_5931fa11c298"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-018",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_ad2c05dcfeb265648180bab6eb76ff914aac1291",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_614e621033870f514b43fbb4668c8e27054fce64",
+        "amount": 27000,
+        "gasFee": 700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_ad2c05dcfeb2"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-019",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_cafe7fba4a90898aea80ea94cd7bdc41675bec9c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_ebb560a7025b5a3e50c0151f328ffb5dda646c8b",
+        "amount": 28000,
+        "gasFee": 4200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_cafe7fba4a90"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-020",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_dacec241ab4c9ffb1c3d8cccbdc47328e16e8559",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_48ac383a3bb3075364819451dd2446f2b29df1bb",
+        "amount": 29000,
+        "gasFee": 3800,
+        "timestamp": 1792892079596,
+        "status": "PENDING",
+        "signature": "sig_det_dacec241ab4c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-021",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_aa47d1bdc61bf3a5869a72535acd392d9a68b593",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c6104575bce75c446f9c709ff988ac44de832a0f",
+        "amount": 0,
+        "gasFee": 4500,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_aa47d1bdc61b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-022",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_16844a3dcecaf50eb4e7369603d7531d823e5e35",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_84161aeec77b27b8fb1f3b9d53e5e807318c1a06",
+        "amount": 31000,
+        "gasFee": 700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_16844a3dceca"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-023",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_b77e8fd0a886ea9ad2b8e4718ef86a002cb695c7",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_fba563957201f730017edd78ab639a9d86b1f4e0",
+        "amount": 32000,
+        "gasFee": 4000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_b77e8fd0a886"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-024",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_9d1a548ef89880c663af978123a65b09963c2f4d",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_02923ee1f89c852d0d998035020c7241b9aa01f7",
+        "amount": 33000,
+        "gasFee": 2800,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_9d1a548ef898"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-025",
+      "kind": "multisig",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_64db5bae17834f2b96d6e4b2b4475e22a5a1c0d9",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_db4412d53d4fedb3a04d6c9ea73443d314206a6e",
+        "amount": 34000,
+        "gasFee": 3900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_64db5bae1783"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-026",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_151bb8a1fc3942b688fb348e6724a51f9d180a3a",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_affc3bd5cf2df39e2b54a4a69dffc2c4b939df50",
+        "amount": 35000,
+        "gasFee": 2100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_151bb8a1fc39"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-027",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c33a4047b7844770271affd7a4304b0530a51533",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b7ab805823ee82b53f61c7b55a01a2650f6974cb",
+        "amount": 36000,
+        "gasFee": 2400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c33a4047b784"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-028",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_f696b19265c18c401f47f1da1bd870406dd0a704",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_def329b33db1a7442f3f63ab348f0a6470c577e6",
+        "amount": 37000,
+        "gasFee": 2000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_f696b19265c1"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-029",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_59354458c90679d66891a1db9215b4578ac31440",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b7f33d82dec61d7674463eb11f508d76e0e774a3",
+        "amount": 38000,
+        "gasFee": 4000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_59354458c906"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-030",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_65b2e610d4bad9e40bcb3b13f3f2f16c811d10a7",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_dd360f85177d355f13d8ee4430ba06187beb5a06",
+        "amount": 39000,
+        "gasFee": 4600,
+        "timestamp": 1792892079596,
+        "status": "FAILED",
+        "signature": "sig_det_65b2e610d4ba"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-031",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_95bd9c5b9f3134fa0710908357014958ddd16883",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_a70ba5c9e1d9af5ffd6483f5cb97e5a33331204f",
+        "amount": 0,
+        "gasFee": 4300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_95bd9c5b9f31"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-032",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_5d0ab68f62ed36d92c3d698957161247f24b89da",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_4d79c0f5c67cf91c1e3d1725801a9884c0cf0676",
+        "amount": 41000,
+        "gasFee": 1200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_5d0ab68f62ed"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-033",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_8eb1023fc545f7364d71d7bc93232252049f6e88",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_70bafd5dd8e29304cecc45638102fae147c94f3a",
+        "amount": 42000,
+        "gasFee": 4600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_8eb1023fc545"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-034",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_94e0d4530de2f29af08fd683b805eee2afa8f58e",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_38a5b0f63372cda34d7dfb2d6d24b9cfc8378019",
+        "amount": 43000,
+        "gasFee": 1900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_94e0d4530de2"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-035",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_50be41f456f91c1f58684e4cc0a7033454be978b",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_6ea4688759c494f9ca7117005122a0bfc88bb2e9",
+        "amount": 44000,
+        "gasFee": 2300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_50be41f456f9"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-036",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_3795e8e1e04b70ab24990ee23ab62f797c7c1a04",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c7e7c948ee9798cd960e89d718dafdf9de111cc0",
+        "amount": 45000,
+        "gasFee": 3700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_3795e8e1e04b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-037",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_19427b60864db897ceadfdc4f1f248c88937e107",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b4d69c3095c4f45c1a2801dde17d5474c712cfef",
+        "amount": 46000,
+        "gasFee": 1300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_19427b60864d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-038",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_d5bc60568fb90f19bcc5f8f8d4dd30f07be0fdd2",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_0fb9aff950fc18b629237425fc682c51092ebec3",
+        "amount": 47000,
+        "gasFee": 2400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_d5bc60568fb9"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-039",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_3d345aaefa5cb3e685a1710d1ec350139679ccf8",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_f7704d69f1a3f1e99e5f6a3019fe8135806aa05b",
+        "amount": 48000,
+        "gasFee": 200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_3d345aaefa5c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-040",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_166b484d7a5766e994fbe473033bcfa350e8a7af",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_eeb4be01d51a9636edfe7a07cfd5b6414517a0dd",
+        "amount": 49000,
+        "gasFee": 2400,
+        "timestamp": 1792892079596,
+        "status": "PENDING",
+        "signature": "sig_det_166b484d7a57"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-041",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_9266c180268a3c5f8a8ec315e92c22dbd63d7ebb",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_114fea994b356ba925901a97c39fd1fb0aabf6b8",
+        "amount": 0,
+        "gasFee": 3700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_9266c180268a"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-042",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c5375a445390ccdabe4b7bd7cf7c425dd3d22753",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c43c8355b4a547f62d9099b562faf7e25699dd03",
+        "amount": 51000,
+        "gasFee": 2900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c5375a445390"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-043",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_bff03a8bc50ee6c0582ed6b1de1fec7ba78d5406",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_ed670a09d6920c8955842bb721b21018ae44bfae",
+        "amount": 52000,
+        "gasFee": 300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_bff03a8bc50e"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-044",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_d62c47a1b4796aaf67bec2108a81b5d11b91a2a2",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_01350b89c3dcb15d20ea9bd50a272cc805923c04",
+        "amount": 53000,
+        "gasFee": 1300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_d62c47a1b479"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-045",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_dc573dc391d4ac644abfd4672f555cf4b6bd878b",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_fc02dd3a34240149f46c62b0618eb48a025fbea9",
+        "amount": 54000,
+        "gasFee": 3200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_dc573dc391d4"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-046",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_2b8282e7c5624a79042a8aee5b63edb1129d8413",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_6a9890e5b4c0c9a26edd84ef885acb1f1b88c2a4",
+        "amount": 55000,
+        "gasFee": 2500,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_2b8282e7c562"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-047",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_1875d44b7e361ac138aa580be5b983abc2335c78",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_3824154056e7478b36568a675b6565ddca8dd982",
+        "amount": 56000,
+        "gasFee": 3700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_1875d44b7e36"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-048",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_bed352065a02eb9259d13df709bf072a43fb9b44",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_d92e96fa33380adcc75330ac8a7719c157c7cc69",
+        "amount": 57000,
+        "gasFee": 200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_bed352065a02"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-049",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_ba3eddb599550c6f637bea74729c455ae534c346",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c5f788f267971b7c5eb7133d19083a75e85b7907",
+        "amount": 58000,
+        "gasFee": 4100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_ba3eddb59955"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-050",
+      "kind": "multisig",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_128dd1320e4d0745fa6dccfd5da35026114de0ef",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_319a9b0d1d9f1586204487ba96c9c2e6ecc4351b",
+        "amount": 59000,
+        "gasFee": 300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_128dd1320e4d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-051",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_7891a7ef9e904631b46ea79136b1b4cad0b709fa",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_eaf0fd69cad23f4c165723db0e29a50fe13b8482",
+        "amount": 0,
+        "gasFee": 1400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_7891a7ef9e90"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-052",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c97d8670f5f9b2072f33634e7a39ecde0ee48f6a",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_5e4a35eb5d5f15d6a62ea79a6fe55ff77054cae3",
+        "amount": 61000,
+        "gasFee": 3500,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c97d8670f5f9"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-053",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_b945aa45a2e3b3142fcedbc8b086e6b2a18f1e41",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_df670a9790887e4dd7c9a007a60f49a8e3dc5b19",
+        "amount": 62000,
+        "gasFee": 3400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_b945aa45a2e3"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-054",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_7b6b3aa5172b7d6e11ba8870e1b35b83f621d0bc",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_5e9182ac1f82a960b4c00e6a9ffd9eebb56d3e27",
+        "amount": 63000,
+        "gasFee": 4400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_7b6b3aa5172b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-055",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_6c887d701032baaef63cda4e897fc34d7dabdfe2",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_17110877daa733151672986a5ea3ea49715c19cb",
+        "amount": 64000,
+        "gasFee": 2100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_6c887d701032"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-056",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_62c8f30f710047882ca3ed6f8b9bee2a9341db9c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_1646cdd3b81a1a97d6b87a1b50b705dbf703a53c",
+        "amount": 65000,
+        "gasFee": 1000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_62c8f30f7100"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-057",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c93c0ac7d3083144ebb393d01682e830f2b1aec6",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_4895ebe4cef47bc70e4ca7dd37c23b01161ec7b0",
+        "amount": 66000,
+        "gasFee": 4300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c93c0ac7d308"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-058",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_07f1418e5c0962cce2767671b1e9563f5168697c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_63711ee5e7bac6df601ae829ff7eddcf271071a1",
+        "amount": 67000,
+        "gasFee": 4000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_07f1418e5c09"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-059",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_6b4aa042958c63cf7b8eaeb03dccf7b3579bb4d5",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_ae1ab909cc0f1c8d30051ccee839e973d89f0780",
+        "amount": 68000,
+        "gasFee": 2200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_6b4aa042958c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-060",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_a3e788e86f820a411b2715a5300c076c604281df",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_a8c3bcf7856fb8e747dbd293f89da5041b4adb16",
+        "amount": 69000,
+        "gasFee": 3300,
+        "timestamp": 1792892079596,
+        "status": "PENDING",
+        "signature": "sig_det_a3e788e86f82"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-061",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_67af4e6e0fa109ad5d4afeff0d006dbe6d61226c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_02ca3c4fadaaaa9e38071ba8092e8401933dc408",
+        "amount": 0,
+        "gasFee": 2600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_67af4e6e0fa1"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-062",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_5edb8e52e44dda4ef73870a77e297b3cace5db32",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_4d01360bdc84fe41383c1d3620132e74d19d8808",
+        "amount": 71000,
+        "gasFee": 0,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_5edb8e52e44d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-063",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_6a1fc7a6c2c22d8fe3bc38b4983fac2e9661df89",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_117eba89e5799c4713cda0ac509805ff828d4eda",
+        "amount": 72000,
+        "gasFee": 200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_6a1fc7a6c2c2"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-064",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_a9657c2663f98eca34ae42f1512d724859897b2f",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_391acce3e5b430c5700b5e714716ee61a3431284",
+        "amount": 73000,
+        "gasFee": 100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_a9657c2663f9"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-065",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_99de30fa8015e93c61a887b7e41751951318164e",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_960c31abe0c72493a0ba1f905cb2c6fa2ae69d3e",
+        "amount": 74000,
+        "gasFee": 2900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_99de30fa8015"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-066",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_16766c56b05bf2599f4f80314e52358d22298438",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_40cc1dc536f7cb3f4f9eacc1e3c679d2ccae8057",
+        "amount": 75000,
+        "gasFee": 100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_16766c56b05b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-067",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_a4c1a6c59874fdea2051fee5a3033a9d57d5c060",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_54a286101d33f7eea9254bbeffbfb0742f3baa15",
+        "amount": 76000,
+        "gasFee": 2100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_a4c1a6c59874"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-068",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_6c65cabd25ea4003ce392422a325c3b77bb6d5fd",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b26584b891dd2eac4e2e8ed96e40deb28e32b768",
+        "amount": 77000,
+        "gasFee": 700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_6c65cabd25ea"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-069",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_86faeb5fc97b335522a892b46aed6415c4c2962f",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c1a588a0fd85117f70e3046793a901169e33fbde",
+        "amount": 78000,
+        "gasFee": 4900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_86faeb5fc97b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-070",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_fc4974f0aeca08511b9cb6b446e18e79a96b5108",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_5af2e9e75f57d34a029356f9b3bcd362b72ea3e8",
+        "amount": 79000,
+        "gasFee": 2100,
+        "timestamp": 1792892079596,
+        "status": "FAILED",
+        "signature": "sig_det_fc4974f0aeca"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-071",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_de6371def1e51f450190750e6e8c225e1cf77390",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_e2003f55c4f04a87abbb9bc51635aa8273badddd",
+        "amount": 0,
+        "gasFee": 3300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_de6371def1e5"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-072",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_bd2580598c9492dd5d6365955d3139ccecd8150c",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_53fc4287037435c11ff754a164b4553926c804e4",
+        "amount": 81000,
+        "gasFee": 0,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_bd2580598c94"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-073",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_71f09c5bd3003a5cf1dadc3e40451477f3856069",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_e602faafaa3db9af5a2161dcaebc04cc3b5e619f",
+        "amount": 82000,
+        "gasFee": 2100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_71f09c5bd300"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-074",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_bc86cc352c1ceced59af767ede2058fb5706dbb8",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_bbc341057d5de876a306dc16cb609b82252a709d",
+        "amount": 83000,
+        "gasFee": 4000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_bc86cc352c1c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-075",
+      "kind": "multisig",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_8091321d5d0b27a8e7aed425fa6a58b4230afc51",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_ea349973d93b50e1f8a554212b33a2bed32f9321",
+        "amount": 84000,
+        "gasFee": 4900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_8091321d5d0b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-076",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_dc7c6c804e34c0abac7833c09d8136ea5efa531f",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_af3922b74173055a39f7a21fee0bc903331278cd",
+        "amount": 85000,
+        "gasFee": 2300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_dc7c6c804e34"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-077",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c806fdc408694b2687772873a87db349256a2e81",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_08ad63f68fae4380a57681894bd30936af05e77a",
+        "amount": 86000,
+        "gasFee": 900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c806fdc40869"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-078",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_12fddb8afc3e7fbf7bb29345e6e46758ab3970be",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_27f61b76165e2fac459210757e424b56746e4ec0",
+        "amount": 87000,
+        "gasFee": 3200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_12fddb8afc3e"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-079",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_264acb598c6b7101cc3362fd798975acaecde42f",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_7fe05dcc73f51e909a0edd836c9c0c0ecdbf0d8c",
+        "amount": 88000,
+        "gasFee": 4500,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_264acb598c6b"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-080",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_39e6ecbe1b95ce031181dfd923c8c5a415f31aa4",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_97bf59c69ab99a778f5e4dc3da7044ca97ec8a2a",
+        "amount": 89000,
+        "gasFee": 3300,
+        "timestamp": 1792892079596,
+        "status": "PENDING",
+        "signature": "sig_det_39e6ecbe1b95"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-081",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c5523d1dbc61b3467056eeec8e4c02311470c141",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c67883c620948433da43a8705508e4a2e1c335cb",
+        "amount": 0,
+        "gasFee": 3300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c5523d1dbc61"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-082",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_d290cf16585f59cf292b92e98cddb6b0dd6539d6",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_3e3c726497536c8ad17014a7e528250ae18fdbea",
+        "amount": 91000,
+        "gasFee": 4100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_d290cf16585f"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-083",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c09f2ad72a81de251c46f1cecf07446a5d946546",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_e01eb28799f60028c688c8c7819909d0a034ffee",
+        "amount": 92000,
+        "gasFee": 400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c09f2ad72a81"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-084",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_15422aaf8a823d1ce1cff3debdb05678655cd509",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_6be4a066fc6d1b9f83cb9d9481d24f8876df31b4",
+        "amount": 93000,
+        "gasFee": 400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_15422aaf8a82"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-085",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_fbf8fee00dc5bc83cbb535a5b0c3a58bbf136536",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_530349a5d2ead76c5bd6270e67d58169986b61db",
+        "amount": 94000,
+        "gasFee": 400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_fbf8fee00dc5"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-086",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_24674d47ace116d254ed6138600d36abf3a204f4",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_a99a7fa2a515b39706f107be774041c4df5bd250",
+        "amount": 95000,
+        "gasFee": 3000,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_24674d47ace1"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-087",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_863acffbdf505579a3f269ab55727dba9879022e",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_615f7906fb851594977ffca301eeba4e349bea21",
+        "amount": 96000,
+        "gasFee": 4300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_863acffbdf50"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-088",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_97e096632c5962cdcb06875af19225f421539fe8",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_cbb3d5c1fbcbd459dd84d38c32ca9bcf49b0ec53",
+        "amount": 97000,
+        "gasFee": 1900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_97e096632c59"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-089",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_afe24dbdb9efb5649ed8a13eb742033988325985",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_23d1e678ac90af08750dcec6747c3079dad197ae",
+        "amount": 98000,
+        "gasFee": 4400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_afe24dbdb9ef"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-090",
+      "kind": "failure-injected",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_8071a1849fc9f20fb344abdb8629718e6209abc5",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_cb61716bc8e3794e4f541b4b26d1d9b524f2719c",
+        "amount": 99000,
+        "gasFee": 2400,
+        "timestamp": 1792892079596,
+        "status": "FAILED",
+        "signature": "sig_det_8071a1849fc9"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-091",
+      "kind": "zero-balance",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_24fef1f2432f7324f85c29f60d7fc6483afb9a3b",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_a46fa9f0127aad1e7e2f932207cd8123019fbad6",
+        "amount": 0,
+        "gasFee": 2800,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_24fef1f2432f"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-092",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_5dd5ec82923dddc1754fb77eb299cfbc13a5b54a",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_9877bfe8c5b546309546fd9177bb12d835ba9c87",
+        "amount": 101000,
+        "gasFee": 4600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_5dd5ec82923d"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-093",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_c687405b5211d2fb300d2d948b8aa32978f7dd07",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_7e8b6892215c88733845f40a5ea15ff962000995",
+        "amount": 102000,
+        "gasFee": 2900,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c687405b5211"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-094",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_e1575003111c210d7620f0cde77552ab8707f1c2",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_994d2aeb8b47c6e124fcd82e6e9cfa8a6b1db3bf",
+        "amount": 103000,
+        "gasFee": 600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_e1575003111c"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-095",
+      "kind": "high-throughput",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_f96752dc12172dc3f4ee25e1d21a0a72ed4cd54d",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_885bcb422425fce43f71e77b0e52bd7b56151525",
+        "amount": 104000,
+        "gasFee": 1700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_f96752dc1217"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-096",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_236358f611bb914d41176145bdd99815bdcb3b14",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_cf5ac386b4e53a93a3a6d90cfdee4cabcc4d9105",
+        "amount": 105000,
+        "gasFee": 0,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_236358f611bb"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-097",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_bb0eadd4e3bece8f6687201c35ac8d30e9968dff",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_f7b061c7b858197d1ee83cbf73c4fe65d8872d0a",
+        "amount": 106000,
+        "gasFee": 100,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_bb0eadd4e3be"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-098",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_1d463da8564a6d116abb42aacee337b65677e040",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_22913cc33c69a8054667a3f02347cb9360c85428",
+        "amount": 107000,
+        "gasFee": 2300,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_1d463da8564a"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-099",
+      "kind": "transaction",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_064a4beefcc2a641af639da1be7960df6300adad",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_a731185d47d1fe1b2bae93ccf4d561bd5ecfa449",
+        "amount": 108000,
+        "gasFee": 1400,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_064a4beefcc2"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    },
+    {
+      "caseId": "genesis-fixture-100",
+      "kind": "multisig",
+      "protocol": "ABI_API_1",
+      "transaction": {
+        "transactionId": "tx_e30affe15a264f5c338da81a3b2965fd5d5be2bb",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_8831dee1c457c6d817980726d570ae9ed426b47c",
+        "amount": 109000,
+        "gasFee": 1800,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_e30affe15a26"
+      },
+      "expected": {
+        "valid": true,
+        "amountScaledBy100": true
+      }
+    }
+  ],
+  "requests": [
+    {
+      "requestId": "0xKEY_775e500ea44ac155776506c1bcb93e45e6f24733",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_7528f08c68a719d54a244cd26249696363a97dff",
+      "params": {
+        "from": "0xKEY_c86f4463e460056b8166735f7e0601edfd1b0d12",
+        "to": "0xKEY_32f90b75d1a57264c3a3419b79bdfb109f554874",
+        "baseAmount": 50,
+        "amount": 5000
+      }
+    },
+    {
+      "requestId": "0xKEY_afd016118a9a01b2c1e786ccbab923aa1aaaa64b",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_1b74d5e727a109758121f649db1fc62443bc7f0b",
+      "params": {
+        "from": "0xKEY_1632d7833a8b49498ff853650f62607f5b33724a",
+        "to": "0xKEY_5ddbada87e932564a2db7c013172f5b685140ce7",
+        "baseAmount": 55,
+        "amount": 5500
+      }
+    },
+    {
+      "requestId": "0xKEY_0611ff9f840896affceae51858b685a4dfbcb281",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_823ab7774b82905b26b8c527c19ed231f85fd4fd",
+      "params": {
+        "from": "0xKEY_ccbbc24171e4394733028a3b67e4a5e9a43da802",
+        "to": "0xKEY_d810f45e7a2a930f7615bc62f1de442e6328f585",
+        "baseAmount": 60,
+        "amount": 6000
+      }
+    },
+    {
+      "requestId": "0xKEY_dbbfa173d6b09163a1dfec04a28dc1f944e9e5c0",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_4e063b8964c52920d899935f1fdfdc6cbb000352",
+      "params": {
+        "from": "0xKEY_0ce53317fe6b6daad073961291869f2c014bb018",
+        "to": "0xKEY_063ea30205bdef42a2a503eeb6ceef0b021dfa59",
+        "baseAmount": 65,
+        "amount": 6500
+      }
+    },
+    {
+      "requestId": "0xKEY_bb66113f80cca62f5a077cfc799c7b3b28cb1930",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_46150a45c9bfbc2dfbd014e41dd72ccfb86fe423",
+      "params": {
+        "from": "0xKEY_412bf8e489c95e5ae83de2b20bb9464627ee3d90",
+        "to": "0xKEY_94227b7afa516eaf15fd5e930b2626e1cc4a2ab8",
+        "baseAmount": 70,
+        "amount": 7000
+      }
+    },
+    {
+      "requestId": "0xKEY_b9469612f330f63d264b8dc973c74e07079cea30",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_85d34180fa709dc6c8b2ab7e4819bde2e3b62b21",
+      "params": {
+        "from": "0xKEY_90be9b94203dd85e8aebfc4f67c287f367813287",
+        "to": "0xKEY_6993bc2bfa23c0f59719ae8997615c5b9d156aa6",
+        "baseAmount": 75,
+        "amount": 7500
+      }
+    },
+    {
+      "requestId": "0xKEY_40e513e8357858cc03ca06763e3b3f24b9516055",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_e0a8ea91836bef31b8314cbea2effa776b13a792",
+      "params": {
+        "from": "0xKEY_a3a51a85957d8906552ff0d0a733d60bfb93b324",
+        "to": "0xKEY_51e8ce8e34960fd806b3652b19e8522b91c96b5d",
+        "baseAmount": 80,
+        "amount": 8000
+      }
+    },
+    {
+      "requestId": "0xKEY_37154b88bd01f1a6540c19e1c9983d8ed4338e45",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_c0afce2d3b9c23727b147c80377f1ee14856ebd8",
+      "params": {
+        "from": "0xKEY_0466d0464414ec2cff95276337bcd304c665be2e",
+        "to": "0xKEY_7820497f17ba93b8f44064e2f649295fbe7d6689",
+        "baseAmount": 85,
+        "amount": 8500
+      }
+    },
+    {
+      "requestId": "0xKEY_06addcdb8f1dddc2c9aef91e6e2424a4e6395b3f",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b60a1db058a056729e977fa4d39025a5d2668daf",
+      "params": {
+        "from": "0xKEY_46c5fd8b66c6cb5818e094dc9559c66005443961",
+        "to": "0xKEY_2f038727e1ff7f179cea818e5e4a9b295a017149",
+        "baseAmount": 90,
+        "amount": 9000
+      }
+    },
+    {
+      "requestId": "0xKEY_b2e0feb3b42536429a1b7ffc33e9d16c5d490830",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_3714cb2a7d4c801f4419bbfdbc9a3b6882f75d9b",
+      "params": {
+        "from": "0xKEY_1ba6a862e02e944cdc4367bd78f1e2de32554abf",
+        "to": "0xKEY_4b35cc93cbdbf0dbeb8bee48e328b2038721750d",
+        "baseAmount": 95,
+        "amount": 9500
+      }
+    },
+    {
+      "requestId": "0xKEY_f670c90e0e2d0cf7efffc1f4474e166074829c3f",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_018ec72466c85cd50d713239a83b2ad4c4a07bab",
+      "params": {
+        "from": "0xKEY_4fb1eebb2c9d2ceb2b12f75ce17d9386de7a1f45",
+        "to": "0xKEY_3c3973178aec55c0f8f66dd6940df0e6d9228223",
+        "baseAmount": 100,
+        "amount": 10000
+      }
+    },
+    {
+      "requestId": "0xKEY_2913a0f0ee91af72bcbddd08c2d272acc1ebaeb4",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_a4dfd13415c05af32a9bd3c4a414e13fc789c2db",
+      "params": {
+        "from": "0xKEY_84a3d6a4a644ee5b5daeaa007b0906f0cfe3dbd9",
+        "to": "0xKEY_4d60b33b2a83fed6a9a285974fad3cabba88bf21",
+        "baseAmount": 105,
+        "amount": 10500
+      }
+    },
+    {
+      "requestId": "0xKEY_d36285e97a1f1f00b8aa13d29784b1f29ac0672f",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_8f78e4521a6055b345b8a74735ec2d898827dcab",
+      "params": {
+        "from": "0xKEY_a36a3062c32dbe2cd67e5ce3efabd85f27bd1d31",
+        "to": "0xKEY_80b31fba7c13145c050e31d40d555d26579274bd",
+        "baseAmount": 110,
+        "amount": 11000
+      }
+    },
+    {
+      "requestId": "0xKEY_2f345e71e24c69077c0f801bf58367d6637c4f74",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_03898288583502792a7b2b44faa5ec719c8e900d",
+      "params": {
+        "from": "0xKEY_75b558c2eddcc8a65f80a38502cf388017df3bba",
+        "to": "0xKEY_d6afeda58662ee427a591ecdd58775b45c5c9ac0",
+        "baseAmount": 115,
+        "amount": 11500
+      }
+    },
+    {
+      "requestId": "0xKEY_f58524ec8cf95e034d821981aa91f46d2fdf93cf",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_68c9bbbf82ee253baeeace0e05ec4cc8c92cd80f",
+      "params": {
+        "from": "0xKEY_63e36af20ebfcb5a02be6ce2436c7b72bf445e46",
+        "to": "0xKEY_de23acd2dbd14ef04a0ddba66e4e64baa27237c7",
+        "baseAmount": 120,
+        "amount": 12000
+      }
+    },
+    {
+      "requestId": "0xKEY_c07dfaccf4b458b6230403f4b864c12c7fd66e99",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_86e76721da96ba73f48bc118b4cff5fd29f63124",
+      "params": {
+        "from": "0xKEY_bd6806edb9ede1344d8c940cc4df8852e35bd530",
+        "to": "0xKEY_bcdeef4aed64dc883eaf5a9e97e3e51c4fe1ee01",
+        "baseAmount": 125,
+        "amount": 12500
+      }
+    },
+    {
+      "requestId": "0xKEY_901985deb06125b0fc1125637d661c225a2a1d06",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_2406993b1c5d83e4b75d82d52326fab90a8fa30a",
+      "params": {
+        "from": "0xKEY_c36e0b3f63f1bba88f198c0a3929baac0e967a35",
+        "to": "0xKEY_e5a8a33bc68a410183898750dd9452dc0f9c011b",
+        "baseAmount": 130,
+        "amount": 13000
+      }
+    },
+    {
+      "requestId": "0xKEY_807d4d606a1bc8a4bd74a73a3ecb8ba63d286b9e",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_2e19ead7675f07e59ab9d99db7dca43fc5be3d33",
+      "params": {
+        "from": "0xKEY_6a3d3ec63c6ce4c7e0e86e12f9ba5fa4fd7d48dc",
+        "to": "0xKEY_573b76e62f92069884fe5c3e727910a4167cc0b2",
+        "baseAmount": 135,
+        "amount": 13500
+      }
+    },
+    {
+      "requestId": "0xKEY_d271f80cca5996240a51ee8fa7b34c8dd52d241a",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_2f6d9f331c97d25ca016e699c482008134d47b72",
+      "params": {
+        "from": "0xKEY_40a7bbeb7c44fe5898d6dd60e267622bfd16eaea",
+        "to": "0xKEY_7f6cc3cbc845be451409c71a692536c19342efd1",
+        "baseAmount": 140,
+        "amount": 14000
+      }
+    },
+    {
+      "requestId": "0xKEY_accc471529070710e376cfaf90e137ebaec68004",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_04b5c9f976f5312830e313d7f4d4fa3b2967e3fd",
+      "params": {
+        "from": "0xKEY_32a98b1c426c3f033fe63117f111202c00d81e9f",
+        "to": "0xKEY_c7d43a6c89d922c85250dc0f744f81657edcb606",
+        "baseAmount": 145,
+        "amount": 14500
+      }
+    },
+    {
+      "requestId": "0xKEY_e614a06687777d98adeea2eacfad3be30028783b",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_0c19948f4954087ba47a55d1c25011891237e834",
+      "params": {
+        "from": "0xKEY_6e27ad16acc2b82a1d1314ab7f4a9bf6723c8fed",
+        "to": "0xKEY_cd21da2e435f281dde2a094ee2e588dd1d9e2397",
+        "baseAmount": 150,
+        "amount": 15000
+      }
+    },
+    {
+      "requestId": "0xKEY_3a5fbc89fd55569facd9844d43dc4829d69e17d1",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_09bf108e105c86aadff529b88edc86711847dc75",
+      "params": {
+        "from": "0xKEY_237466bb129ff72fb8a293dde2904ff4cf140bf3",
+        "to": "0xKEY_b7734c4ccdbba28b78a17948f6f63c81ac20c722",
+        "baseAmount": 155,
+        "amount": 15500
+      }
+    },
+    {
+      "requestId": "0xKEY_79bd3006edfcf420df1080d4afc38bdf162f04dc",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b663aada559996f7358d83fb43049a0e5f8b85c5",
+      "params": {
+        "from": "0xKEY_bc338f1c551893a3a48cb5c8d03f76ebcd33305c",
+        "to": "0xKEY_d2ee980efc09f3eb606274f3ed50c50b4d810eaa",
+        "baseAmount": 160,
+        "amount": 16000
+      }
+    },
+    {
+      "requestId": "0xKEY_142c7be8a70bde8a97e471731400e28af25e166f",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_4a2c37b4aa6f9fd08082724d180dff0e6c989887",
+      "params": {
+        "from": "0xKEY_ee5b4e18684b35041692376a8b28501eaf732ecb",
+        "to": "0xKEY_e80f9f812050303c8cf09927c9c5ebc33ac37063",
+        "baseAmount": 165,
+        "amount": 16500
+      }
+    },
+    {
+      "requestId": "0xKEY_e871c8b8a1e0bef2dcba9f25e48658241d63c978",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_543b53d28642cbdc34439c74f4518f8d91dd54f7",
+      "params": {
+        "from": "0xKEY_38ba6a72dee1cdcc06da878b2cdd2711ec3ff9fd",
+        "to": "0xKEY_8d1c8de6cf29ea1dc9cbab07caa718d4bfa44301",
+        "baseAmount": 170,
+        "amount": 17000
+      }
+    },
+    {
+      "requestId": "0xKEY_eb656fb04fdd5d91f82e389071bc905625c335f3",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_74c30833db198783ffceb6880813a1814ec4a187",
+      "params": {
+        "from": "0xKEY_86845178fd76364865594c82d3ee24bc8b6397a0",
+        "to": "0xKEY_8e75cdaf6e31933dfac23b6e2017f3f3d69bfda8",
+        "baseAmount": 175,
+        "amount": 17500
+      }
+    },
+    {
+      "requestId": "0xKEY_b20b33796869d048171415816d6f462322d7559b",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_24ab0ead0f69d1f0d5fd19f4ae91f7bcb0124589",
+      "params": {
+        "from": "0xKEY_c7f7d4dfbe1cfec3cc1d2667c9a4621d247b7cfd",
+        "to": "0xKEY_0dac8fb8240f5f2a0bf9d7750723d35a1f4c4172",
+        "baseAmount": 180,
+        "amount": 18000
+      }
+    },
+    {
+      "requestId": "0xKEY_2cb21d874de9437291e13709726e2cffadf88a3e",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_f2ae641832b9e2f501aef969eca564b6f583ab9f",
+      "params": {
+        "from": "0xKEY_c3c04ea14f4548274c1085728d8f3cd795eaef1e",
+        "to": "0xKEY_ecee31c7df6ce2f97d3fbcc76cd385343945ffaa",
+        "baseAmount": 185,
+        "amount": 18500
+      }
+    },
+    {
+      "requestId": "0xKEY_36750e1d4a168e8b2e2a37210ed13d87da9c0ccc",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_2f824ca6b405e57aa720440c524d33144b85fe57",
+      "params": {
+        "from": "0xKEY_99a0395a45432fab8e519ca5b66a55c5fa23bd21",
+        "to": "0xKEY_74918fab9d695b6b90d5667270450689d3af2c39",
+        "baseAmount": 190,
+        "amount": 19000
+      }
+    },
+    {
+      "requestId": "0xKEY_1efe4d547898af103d0cb8785260e805daaf77b7",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_61b0fdbad4971b7043de17da0a2969f94b1157b2",
+      "params": {
+        "from": "0xKEY_53e71b1b1f3b2675a10d3883f656ed1f7d0b0263",
+        "to": "0xKEY_de0556475cb75e846984bec5870673d4a3292f37",
+        "baseAmount": 195,
+        "amount": 19500
+      }
+    },
+    {
+      "requestId": "0xKEY_20b311e53950ca60b57efd232e18ad4ca4d0e083",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b537664dae6e4e1a18279a7070e4109711bd97e6",
+      "params": {
+        "from": "0xKEY_bd4a17459365a8a6d8d3469ed3ecbde2eec37978",
+        "to": "0xKEY_78f1e1136ed169679825e85dc0a924879fba9f45",
+        "baseAmount": 200,
+        "amount": 20000
+      }
+    },
+    {
+      "requestId": "0xKEY_64cad02f45f534e1b58a4b2198c61571a6073105",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_46d1a9f1420bacd68ac2ceeabc33752520af4c13",
+      "params": {
+        "from": "0xKEY_6c9b025a5f235fd399a2f49bd2f130b4ae0dc89d",
+        "to": "0xKEY_8465f84b7aa4662a8a912b81ecd9965a25ec3ffb",
+        "baseAmount": 205,
+        "amount": 20500
+      }
+    },
+    {
+      "requestId": "0xKEY_e12917dd4952d06fd85a9a39d77508fe0f3b3384",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_e290c77a28b5a934e9e98d335fff663e13fd0c4a",
+      "params": {
+        "from": "0xKEY_c84fa0954a515debe42665432a5e5762f026f750",
+        "to": "0xKEY_988ce7177addcbf0928d0f75749ff330ad601fae",
+        "baseAmount": 210,
+        "amount": 21000
+      }
+    },
+    {
+      "requestId": "0xKEY_91ff6bf4b9049c541fcb750beda5f45cd59e9734",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_7ffe4cbd8a068b6559d79e6136b6f5ce6dca0c81",
+      "params": {
+        "from": "0xKEY_7da605451f9cc5af51f7d6b71ad11d80d687e0d6",
+        "to": "0xKEY_3f9cbef43009968ac4a7d6f41a4a1bb9ceb7d7ca",
+        "baseAmount": 215,
+        "amount": 21500
+      }
+    },
+    {
+      "requestId": "0xKEY_61e9e626d8bdbf4b9484d46a15a40702f8eb8361",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_9210403eb0a7546db14f1041b735de33f17177f8",
+      "params": {
+        "from": "0xKEY_48ca28e3de95ae3475c80b2635a4d0f37b893204",
+        "to": "0xKEY_6a83f9b20ee8b6c1287005b24aa82c8bc2f2bef2",
+        "baseAmount": 220,
+        "amount": 22000
+      }
+    },
+    {
+      "requestId": "0xKEY_1cc786113d8e8d8686604ea1b2c4014f791e58ce",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_d49890046b2a5e56b7054065dd8ad7812b58b884",
+      "params": {
+        "from": "0xKEY_e2d413bd1ae39e0ed2abe2d2e6cc391010cf833f",
+        "to": "0xKEY_3e8922783fbe58713f7eb81c9c2d8523ee1c12c3",
+        "baseAmount": 225,
+        "amount": 22500
+      }
+    },
+    {
+      "requestId": "0xKEY_bd9a4978d8ece194ce823f7d91a135def3931c20",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b8859486e6efe6caa9381f6820cc008263e71289",
+      "params": {
+        "from": "0xKEY_0871d1c4258c8f660269fa9fe44c2ab123e9834f",
+        "to": "0xKEY_bca2969c9cc7b22309c6063115745bfa2a72f577",
+        "baseAmount": 230,
+        "amount": 23000
+      }
+    },
+    {
+      "requestId": "0xKEY_368b7ca4be15ff4f667bf8deed1f7c5d95459d1f",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b8553d4ed5f3e32f91b18a4316cc64ae4c0d5c4a",
+      "params": {
+        "from": "0xKEY_b48bd562ac92754ba394a590b168069f077fb3cd",
+        "to": "0xKEY_8a901b8a759c0b6fdb36bc4622ff40f07bb0b7e2",
+        "baseAmount": 235,
+        "amount": 23500
+      }
+    },
+    {
+      "requestId": "0xKEY_d737083dd17bf0da29e5cdebbbb65bcee817a5a4",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_8097589c2b2b92c109ff1e5a5c554047cf148202",
+      "params": {
+        "from": "0xKEY_b68f1477402b2d6e0f8ecad6c76257b1a84ddba7",
+        "to": "0xKEY_40e9f50efbb89b3e6631c5341f11992e4731d797",
+        "baseAmount": 240,
+        "amount": 24000
+      }
+    },
+    {
+      "requestId": "0xKEY_cbc884f593e8d53284178c814ac85cac0294aa66",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_943cdd735cf9d54b45fccfae6dd8ab399f4fd6d7",
+      "params": {
+        "from": "0xKEY_26e3a3900c44227053a71e118329bc4fe11be196",
+        "to": "0xKEY_a4fbc11a5e4a4aabd4d75f7c46f83ce70457def3",
+        "baseAmount": 245,
+        "amount": 24500
+      }
+    },
+    {
+      "requestId": "0xKEY_2152c71068c3a28dbe59411054f6cbbc8e470882",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_c0df990bb035ad435ac3b5c68cf86380e32cd26d",
+      "params": {
+        "from": "0xKEY_03b141678dfb1288aee91d30e202a66627338187",
+        "to": "0xKEY_92a90d7b9a2b1b5d1d5110ad9707a05eaa46ddd6",
+        "baseAmount": 250,
+        "amount": 25000
+      }
+    },
+    {
+      "requestId": "0xKEY_e1399395a03cd4f2e6f4e52c7b928e0090bae303",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b983fa8dfb84a225df92591d3a561acc25d8923c",
+      "params": {
+        "from": "0xKEY_a7d23d1f6352ae9ff309d958f845cb327ed5b81e",
+        "to": "0xKEY_2bee7e71385b62a830d9fd6e2a31f254a88adc69",
+        "baseAmount": 255,
+        "amount": 25500
+      }
+    },
+    {
+      "requestId": "0xKEY_45ab998997553744c29d999a4aa6c69f2d4465b6",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_8b429c53f39819ae4313e231ed789b7c1ff31071",
+      "params": {
+        "from": "0xKEY_5ea07daf33a4c7814af76acf70dc3787387b4eb2",
+        "to": "0xKEY_9ffe48d431eb97b3a4e2d3ea6dff34fca8585b97",
+        "baseAmount": 260,
+        "amount": 26000
+      }
+    },
+    {
+      "requestId": "0xKEY_258bf929d417eeb546533718d8eb9745d3e7fd40",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_e2327e6a138f17ce59d851c5d38b648e233acefd",
+      "params": {
+        "from": "0xKEY_8d41e35f13e6286bea344aa72f0813386729f254",
+        "to": "0xKEY_855cb7fdee9085153283a5b31f7d5c381c658d58",
+        "baseAmount": 265,
+        "amount": 26500
+      }
+    },
+    {
+      "requestId": "0xKEY_0593b479ad47e23b4ee76c664937c87959fe3b61",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_d2e6be7161e07750810482543eb9b4f85ab0fa3b",
+      "params": {
+        "from": "0xKEY_4f97620565998e82114ed4f45c02804a647f1a8c",
+        "to": "0xKEY_365888ffcdee98196d8216ad4aa558c71ee8ee5e",
+        "baseAmount": 270,
+        "amount": 27000
+      }
+    },
+    {
+      "requestId": "0xKEY_7e6decf9ffefd32e6b10310e1c6891c14ba4700f",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_5dc9a7f3881734f7acd4cdd2868ceb1cb3464285",
+      "params": {
+        "from": "0xKEY_060b2ed10b183dc86b60abbea1f42276755fb5f8",
+        "to": "0xKEY_e55dc557b50e23fb6f9cd4a07c3dc318e0507993",
+        "baseAmount": 275,
+        "amount": 27500
+      }
+    },
+    {
+      "requestId": "0xKEY_323d26eea95eaffdd003e68b90dc89f232dea4cb",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_0f6e41d7f16b1571489c17476c2f956c4d49ccd9",
+      "params": {
+        "from": "0xKEY_fa9b445c9f2155ff90b32b6cc09a9468f048b282",
+        "to": "0xKEY_b3604738aac18c53c5375751a00bd0ad2e9dcd03",
+        "baseAmount": 280,
+        "amount": 28000
+      }
+    },
+    {
+      "requestId": "0xKEY_2e28d738906ea7b70447bad43596738be0c31a85",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_95c40d4d08fad706b34e42e73d65eb68e3b5ea3e",
+      "params": {
+        "from": "0xKEY_32212cb27276b8a6133d5601f94fce491bf8bba3",
+        "to": "0xKEY_7bc72c4341c3adacf95c8e6ac7192e324ab2c54d",
+        "baseAmount": 285,
+        "amount": 28500
+      }
+    },
+    {
+      "requestId": "0xKEY_d648819b26d6bd5dce163f2b7e041f39667f8125",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_6bf01ddd3ab78eb63accee3d35db95d82811fd85",
+      "params": {
+        "from": "0xKEY_6f4dfdd78a405be14d6930baf01702fb2dc9d67a",
+        "to": "0xKEY_662507477cc10ad1ce444d8104e744fb5d1f1d54",
+        "baseAmount": 290,
+        "amount": 29000
+      }
+    },
+    {
+      "requestId": "0xKEY_2ce816fd8ffda09559f5e55c103b31834e7150d5",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_3f0b74f8a509a031f170e8292392a4b3fe59da72",
+      "params": {
+        "from": "0xKEY_4b4c2c6c8bf5ca5a6838aa3f9a54b3d7d11721ad",
+        "to": "0xKEY_9727f7e79456e284494ebe83d7de256e124d3d2f",
+        "baseAmount": 295,
+        "amount": 29500
+      }
+    },
+    {
+      "requestId": "0xKEY_226bdea0dac7a5f762582a531ece41a17aec7362",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_a734644907e5f0c2daafcf851d7601d7166bf39e",
+      "params": {
+        "from": "0xKEY_01617ddfc761655da3eff3140de1244b9500e571",
+        "to": "0xKEY_61e79623a41c4ae6bc01df3d6737eaf0a3cc4a91",
+        "baseAmount": 300,
+        "amount": 30000
+      }
+    },
+    {
+      "requestId": "0xKEY_eaf7aaddd05666f8a18301f7b9b703a0a26d3915",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_839d7d71b77b48807c1fc84ff660020d0290d4f8",
+      "params": {
+        "from": "0xKEY_b03f14af060dce72f40c511109ba6a85500f2466",
+        "to": "0xKEY_c41cec8998e8322c44397569fa448f83c244fec6",
+        "baseAmount": 305,
+        "amount": 30500
+      }
+    },
+    {
+      "requestId": "0xKEY_a8488d5e997472dc900c3eb37d813f7b8995a938",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_36db69750421abc8c00484c67fe30152963214d1",
+      "params": {
+        "from": "0xKEY_86a8f5afa4b1c75e7095921aaec2da28b518985e",
+        "to": "0xKEY_67c6f3967e04c5d5763bf744803a4a73c2a8064f",
+        "baseAmount": 310,
+        "amount": 31000
+      }
+    },
+    {
+      "requestId": "0xKEY_abdc64ed84ee6ffdd77131f1e1e2837a04b21caf",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_ed3eeaf57b4a28cb72eba8d626ebee545ebbcb20",
+      "params": {
+        "from": "0xKEY_ce49415c971116944d3e7dea15c72833204cb5a8",
+        "to": "0xKEY_c20d695831840757fae7b63ee03eb364ec8c9265",
+        "baseAmount": 315,
+        "amount": 31500
+      }
+    },
+    {
+      "requestId": "0xKEY_067c20f0d74a9f067d020167dda2680da9f5faac",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_d667ac60face47f40f08b1169c8c6be7f09bf7b2",
+      "params": {
+        "from": "0xKEY_7077463d2d808e134768df3501fd3566fedd9948",
+        "to": "0xKEY_f938abfe404444050c71feeeee2e80cf76316368",
+        "baseAmount": 320,
+        "amount": 32000
+      }
+    },
+    {
+      "requestId": "0xKEY_e9d14a642a61bd09f0fbe777c64c280906c18230",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_d289a3934040fffc1a6183f28ee720b781388732",
+      "params": {
+        "from": "0xKEY_099c33c0fcf30c03732832e4fb20b4c5872ab02c",
+        "to": "0xKEY_767272620fdbb9434fcd7907f2525c6d5fd86b22",
+        "baseAmount": 325,
+        "amount": 32500
+      }
+    },
+    {
+      "requestId": "0xKEY_4b68911d9c97f98792f55c3f4e64116e1f11fa38",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_e64557fb6dfb7f3387812f1390065ccb8fb485b5",
+      "params": {
+        "from": "0xKEY_f3ca37332f35ca62a314100fd03d9cb0cbc71b03",
+        "to": "0xKEY_ba63ca16d986577a4399013b4c96e82cccda7615",
+        "baseAmount": 330,
+        "amount": 33000
+      }
+    },
+    {
+      "requestId": "0xKEY_abbcd1e9baf5a9d31e5fc17fbe4a0cf9588a3e1e",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_62380df680908a9661bad0dfc1f58dfc96be8901",
+      "params": {
+        "from": "0xKEY_ac91c63881f100f1085e34d77c084998a3c50cc7",
+        "to": "0xKEY_7bb4850273408678b91af3c01c3162d99e2b7fde",
+        "baseAmount": 335,
+        "amount": 33500
+      }
+    },
+    {
+      "requestId": "0xKEY_db6b53ba966fa5860f4aad6e8a1c28cf0f72e339",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_eccd6e7e14b360444a195fad51d65dde57cccdb3",
+      "params": {
+        "from": "0xKEY_39e78d755047a40152db72c3bbc61744c7195c0f",
+        "to": "0xKEY_a4f1815e6f59a721d25dd10a86204c2cdfccb223",
+        "baseAmount": 340,
+        "amount": 34000
+      }
+    },
+    {
+      "requestId": "0xKEY_24f967c4823ea866ac8742df1d5f1509eb4c3076",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_32c637f0dba8090d1f6bde99c6cbe722faeb3e60",
+      "params": {
+        "from": "0xKEY_7750b2b29f733aefa9737127403eda0b2fcf86d3",
+        "to": "0xKEY_2c3a8b365b560685ba295cc74f0666ab0476f7d8",
+        "baseAmount": 345,
+        "amount": 34500
+      }
+    },
+    {
+      "requestId": "0xKEY_6cea773e419a9db12b6a393aa73d2425cba1e2e5",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_03dab77c0115de698b02e8ce366b3f14b87cbcca",
+      "params": {
+        "from": "0xKEY_93ebb2c2c80d07ecc36c682a288e82c6791add42",
+        "to": "0xKEY_79a2e609d2e693206e1717f007f326391f0a2929",
+        "baseAmount": 350,
+        "amount": 35000
+      }
+    },
+    {
+      "requestId": "0xKEY_43471fe87120b5b10e819e2aadf48c93f8195d4d",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_eac64d372d7684b2401873e48728e1e9ee73d7b2",
+      "params": {
+        "from": "0xKEY_c482b12a3c3a7ae4008eb094ffcb37856eeb99e6",
+        "to": "0xKEY_33e98b7a7939e8785ef2541245c7530455a9225c",
+        "baseAmount": 355,
+        "amount": 35500
+      }
+    },
+    {
+      "requestId": "0xKEY_4e3c093902d9ce5c6d70cf9e9cd2da36d85300c9",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_1da02eba9b85d1bf2a147dda283c1d19febd0ad1",
+      "params": {
+        "from": "0xKEY_107406eaf5b62af490b7c9e7bc9974c8dfad4683",
+        "to": "0xKEY_cc4c72152d541407fedd18ea9fdf56d062815401",
+        "baseAmount": 360,
+        "amount": 36000
+      }
+    },
+    {
+      "requestId": "0xKEY_7b543d3c485528be46cb87d8098f8ab4a3ed6489",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_39ae0a49e4974d7c55a07f8d66b7ca47fc6387b9",
+      "params": {
+        "from": "0xKEY_fc2d8c3c938fbd9e7e2d507525a6998dcf843697",
+        "to": "0xKEY_18390631e4db781c538ec8313dbd13ba7f01cf21",
+        "baseAmount": 365,
+        "amount": 36500
+      }
+    },
+    {
+      "requestId": "0xKEY_bbb5be0e067d6bd084a9bcb1b87f40ef636dd36b",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b027c2ccb331c99eaf64cd907ffb3edf3f808609",
+      "params": {
+        "from": "0xKEY_289534b7be12673269c577c8ebef2012136e1799",
+        "to": "0xKEY_bdbd337e8a49f124964843a637d1f437f0f4a530",
+        "baseAmount": 370,
+        "amount": 37000
+      }
+    },
+    {
+      "requestId": "0xKEY_eb4d7f8d091273bb61d1f0d3a6f2b06323e97070",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_2372f0dc7cd6abc21710d3fdef54c482c03d84d8",
+      "params": {
+        "from": "0xKEY_deb0da600b4e7beb93b77724d36e46e68b9d3bb9",
+        "to": "0xKEY_3e2a8db141c3db2f46c1691361e020a3418689d1",
+        "baseAmount": 375,
+        "amount": 37500
+      }
+    },
+    {
+      "requestId": "0xKEY_73592fdd978a687e83ee3dd1a6c0cf394075c8cd",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_4466a7687a866bd25f0b9de30a0c96878ca172b7",
+      "params": {
+        "from": "0xKEY_7abd1d5f9818e476b4bb4d063984b630aafa511a",
+        "to": "0xKEY_f349e12eb2b566347868a4784ff3a55ab1fd2e1f",
+        "baseAmount": 380,
+        "amount": 38000
+      }
+    },
+    {
+      "requestId": "0xKEY_7da17367c517b8eb14796e697c597c2164029bf4",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_9e008bfa8e7b0519b10a917f4dc18a31f1faa7ee",
+      "params": {
+        "from": "0xKEY_7185e5fcd9b46718a7526bf69eaddb6c19a3e1e1",
+        "to": "0xKEY_60c77b9feecdc1feb1591ae06b574b7a9c9d4425",
+        "baseAmount": 385,
+        "amount": 38500
+      }
+    },
+    {
+      "requestId": "0xKEY_97ae6ff90f0848abfed2a1b668e90c8bfcc86e7c",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_dbc5b8b7064a163ebb2fa28daf95e77084e02a4b",
+      "params": {
+        "from": "0xKEY_6a5a4703a92ddc6f69e91b737d61a17bb69f8481",
+        "to": "0xKEY_a9a43dd283a5f301151de738d0bd4bac7fb4948f",
+        "baseAmount": 390,
+        "amount": 39000
+      }
+    },
+    {
+      "requestId": "0xKEY_d655e84337301a33f3cfd39e85bd00505cfc50f9",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_9f8b3974603e054d3dfe41b3229dc5bec093b500",
+      "params": {
+        "from": "0xKEY_70962dfac822aca17d82ba48440c3119a90d7af4",
+        "to": "0xKEY_a90b742ad5529a00f21b57bdbdfbf39b938f1bef",
+        "baseAmount": 395,
+        "amount": 39500
+      }
+    },
+    {
+      "requestId": "0xKEY_f543309a3b8d28d5b889f671c1b56047335ab09e",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_a2b17c35b17b2a73cc2b0b3072cd21d89d5e57e7",
+      "params": {
+        "from": "0xKEY_8f1d84f19738f1ad41863ee8baa3824ede236bbf",
+        "to": "0xKEY_b718fcf3ea8095f1128d1c756e3fdef7651272cd",
+        "baseAmount": 400,
+        "amount": 40000
+      }
+    },
+    {
+      "requestId": "0xKEY_0451d3ed157336b61a0abc9150271fd2bed88df1",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_819b03a5158dea0db45bba1badfc238c4d05420b",
+      "params": {
+        "from": "0xKEY_7b3a1bc4357b8fde199e73d2f2e741e9f5977bda",
+        "to": "0xKEY_bbc380d9027402ec6180aeedc800031986593a59",
+        "baseAmount": 405,
+        "amount": 40500
+      }
+    },
+    {
+      "requestId": "0xKEY_ddc4bad958d02e5f7e0eeee4452f38c603978854",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_db1015f50f6ae506010a58e4fea20dc32445ffbc",
+      "params": {
+        "from": "0xKEY_0b5fe1efc61d187072f347d56ea4cbc78ab040c1",
+        "to": "0xKEY_1c04d3a86c16081827f629a2766d74479068fa68",
+        "baseAmount": 410,
+        "amount": 41000
+      }
+    },
+    {
+      "requestId": "0xKEY_ce3f88cfdeeaaa3cebd5e611389b91582dcddffb",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_051d1df165ffa37d9a99f7a47b4b5ecff15b7018",
+      "params": {
+        "from": "0xKEY_4cdd7ece09c8e6f2724b13d77b5cc81e2051fd73",
+        "to": "0xKEY_28854b349f77a524a117110859b6abd3a929e81b",
+        "baseAmount": 415,
+        "amount": 41500
+      }
+    },
+    {
+      "requestId": "0xKEY_beb45283fcdb8366cb5dc32ff6f0601dc8dc3f0c",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_a7a273af0b1f1efa360aac0485c04fef20cda4f4",
+      "params": {
+        "from": "0xKEY_1d55340c00c3b72d4d485a0e79b4af18c7f8f912",
+        "to": "0xKEY_039add0eab679d28f197fa0a6f28037d6a4487e1",
+        "baseAmount": 420,
+        "amount": 42000
+      }
+    },
+    {
+      "requestId": "0xKEY_74e55ac12b8a93e11adbebcbefb4f0bc371c4113",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_43f404188fcf51c6ee23928c18126b89f34c5a4e",
+      "params": {
+        "from": "0xKEY_6945a96f079cc290b23901247e4e0642d3310b6e",
+        "to": "0xKEY_1b3650748d009247c5dd743b00eaaede0c7bc702",
+        "baseAmount": 425,
+        "amount": 42500
+      }
+    },
+    {
+      "requestId": "0xKEY_6acd0c0839bdfc505bd1a558222d92187d59f721",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_ec303c7c2dee1086ee1a643d6abb07d64092e92f",
+      "params": {
+        "from": "0xKEY_8c1789a9ffe468ea80c399d5f69a33e8e3f293ba",
+        "to": "0xKEY_414162acbae05b0d696869aec1f61195c5c19d14",
+        "baseAmount": 430,
+        "amount": 43000
+      }
+    },
+    {
+      "requestId": "0xKEY_254c3755d778f8157690cdfeee7a22e7540de19c",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_f89a1f012e05713653aee954272cfadb007572f0",
+      "params": {
+        "from": "0xKEY_211e467ff5c85f4afa86739c39142b14c9a73ffc",
+        "to": "0xKEY_484360b1c9c0a14f240575ba7a4ef2540aedb0b4",
+        "baseAmount": 435,
+        "amount": 43500
+      }
+    },
+    {
+      "requestId": "0xKEY_5c263a8fd3c394ded18d8d88edabe46200db4a03",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_c389c6da284178913f0eef6fda4e6f6188572717",
+      "params": {
+        "from": "0xKEY_e1e002aeafe1eb570e980548c41ea53fc8a8172e",
+        "to": "0xKEY_1c20c8577d02f0b05ba11d87454bcc79aae033c6",
+        "baseAmount": 440,
+        "amount": 44000
+      }
+    },
+    {
+      "requestId": "0xKEY_8bf2b1d4b5f53be27156cfc3f5d83ccb251fa431",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_6fa0e7bf1f736f8183aa08a53a9af35d69f49478",
+      "params": {
+        "from": "0xKEY_1cdf960f742d25350028a1cde760057719640751",
+        "to": "0xKEY_29d54b42bb3b54e305226e12bcf0da2f7974e9a6",
+        "baseAmount": 445,
+        "amount": 44500
+      }
+    },
+    {
+      "requestId": "0xKEY_f799c8a202d2e587137f6e44f80e18bbd55fc8d1",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_4e823e4196c4e1263122c55720760a040ee74ae0",
+      "params": {
+        "from": "0xKEY_2658ec5ba7ac696bcca924c11a3bb4f2e0d4609e",
+        "to": "0xKEY_8e63d4fedb8062974a127fa1b9245a1a0c5c0085",
+        "baseAmount": 450,
+        "amount": 45000
+      }
+    },
+    {
+      "requestId": "0xKEY_51a3da1b82befaf053ea4e685bc0c343212c6ff9",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_a5c4051a00f9b2fdb6812fcf780c54fad4d8ccb6",
+      "params": {
+        "from": "0xKEY_30a926b403ced96560bb13eb0114e42546296e9c",
+        "to": "0xKEY_c278c6daadf3a2dfc7787cf693ff9fac0748306a",
+        "baseAmount": 455,
+        "amount": 45500
+      }
+    },
+    {
+      "requestId": "0xKEY_92001ddaaedb6c2acc19c1ae25ee53b009b19c6e",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_59b323a5e260ecac44acdecfe17412bc8fee2941",
+      "params": {
+        "from": "0xKEY_b4aadcaf82548a6c3439a1dab32de66f9a763715",
+        "to": "0xKEY_d4e8dd49bd8049afb6d3b61e9e85e38efc7c3f76",
+        "baseAmount": 460,
+        "amount": 46000
+      }
+    },
+    {
+      "requestId": "0xKEY_673e42d57ec3f5ef09008ed7deaad17ea42819b9",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_813848daab5936f68eaaf493091912cee5205fed",
+      "params": {
+        "from": "0xKEY_eff8989499548be85e56d60e9a132ec151ec2d99",
+        "to": "0xKEY_f9a843ef1b4ee80c8621973a084bab522e463b2b",
+        "baseAmount": 465,
+        "amount": 46500
+      }
+    },
+    {
+      "requestId": "0xKEY_16f0c7e46b8a76c2f10049cd5af37fe20d363120",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_c8c872c0bfe8635fc11f303eccc9a6fd8dd6e7d0",
+      "params": {
+        "from": "0xKEY_f0a80e0e809304d54ec8f5705719f64d95f399c1",
+        "to": "0xKEY_43696c2ec0e7f378079f4f3314a2b994bb0bf35b",
+        "baseAmount": 470,
+        "amount": 47000
+      }
+    },
+    {
+      "requestId": "0xKEY_1dca1141ad20c95ca5dc13717b0e4680ea923da8",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_810fd459cbf757a5cc1ef717732ffa593b0e4e69",
+      "params": {
+        "from": "0xKEY_9aec71cf24531b584cce4e5329f710f723a09b63",
+        "to": "0xKEY_df892a48932be9d147a18908e2e87e799209632e",
+        "baseAmount": 475,
+        "amount": 47500
+      }
+    },
+    {
+      "requestId": "0xKEY_29c30b4f66927a59914556d87556f0950f3ec450",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_f95c953c14fca76ff8095aa81cd0b041583756c4",
+      "params": {
+        "from": "0xKEY_10e01c0a6219af3ac33fc250b94477d358b5b044",
+        "to": "0xKEY_3ffe5755a27ee4f1f1f258a84c9892cf9c81757e",
+        "baseAmount": 480,
+        "amount": 48000
+      }
+    },
+    {
+      "requestId": "0xKEY_e01161dbb6e064f088e3c4f3202e6b6d29d33389",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_8b80f2310ef1b1e334cab6d01b32dc5e8015d73c",
+      "params": {
+        "from": "0xKEY_a4f155b566f93ca4987f9c04ad44f7a96ea187aa",
+        "to": "0xKEY_1bd4b98fb056f714b7c8a92edd8dab4faa9ebe89",
+        "baseAmount": 485,
+        "amount": 48500
+      }
+    },
+    {
+      "requestId": "0xKEY_2e5c662ef0509c8f5d455df48b922e2425f4695f",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_02729cfc1ea399188edea121c31bc530239ba4cd",
+      "params": {
+        "from": "0xKEY_f31a388a459c9d4cd01a499a771cdd1dc2802f04",
+        "to": "0xKEY_5a63b2a087b223c50cd9580fa50242bb2345c58b",
+        "baseAmount": 490,
+        "amount": 49000
+      }
+    },
+    {
+      "requestId": "0xKEY_8ac167c4b02f7aab1bca9f29723be809f08fe355",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_9743a43865a75f0e9cc2dafc0ddf4d53e4d17b5f",
+      "params": {
+        "from": "0xKEY_aa58e005f194bf7713dc570b5a3585ada52c8007",
+        "to": "0xKEY_28f495070ddf6609b7bb840eedaa99c97937423c",
+        "baseAmount": 495,
+        "amount": 49500
+      }
+    },
+    {
+      "requestId": "0xKEY_8a41b6e6780a6045056c5fbd7a0a1a2aae455266",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_f2dc2c4de23949f2690987853659b0b0c8d3fdaf",
+      "params": {
+        "from": "0xKEY_6c74097e6b24f4b5f4d37b9abc59ecf0daa68c5a",
+        "to": "0xKEY_bc97e2adc92c647cf82bb7167a7c57412fc4d5cc",
+        "baseAmount": 500,
+        "amount": 50000
+      }
+    },
+    {
+      "requestId": "0xKEY_78c1f0b3951ea17184755afe36cc9c9a0083a7b1",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_624c6efb0f74f22cd4531c6fbf196066556986eb",
+      "params": {
+        "from": "0xKEY_f47b04613786949a66ef3a8c557ad3bc191ae01f",
+        "to": "0xKEY_623f5891f3478742c7b191d73ee2ac50103bafd2",
+        "baseAmount": 505,
+        "amount": 50500
+      }
+    },
+    {
+      "requestId": "0xKEY_bd36fa3d29bb27a286afb2c75bd48dc92a79b2b0",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_40c1d6df0dd8705de7c0d13b7ec3b1cd1d1df3dc",
+      "params": {
+        "from": "0xKEY_bd552ee52d65eebc0ed67c2c49f2ad0ada87487d",
+        "to": "0xKEY_eced26c7ed6b17645e88dc67225a3510e3def1d8",
+        "baseAmount": 510,
+        "amount": 51000
+      }
+    },
+    {
+      "requestId": "0xKEY_8b5aeb71b3e86ef462fad5026f5100d640fd26f8",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_28eeb935187047b11cde18bc573956303019012b",
+      "params": {
+        "from": "0xKEY_c5cb3a9cdfe22229583e6aece6616d7f7df3f22f",
+        "to": "0xKEY_41116fce9c15b8585a7a723c0a9bdf41c9f4ed2b",
+        "baseAmount": 515,
+        "amount": 51500
+      }
+    },
+    {
+      "requestId": "0xKEY_a1a44f5964e5cd84fc39ee0213029141136924b5",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_d3ff185e0cc77e68c350f22822ff8c1ac947febc",
+      "params": {
+        "from": "0xKEY_d07921e32ccd10d898a1a62e6da42708700c92b7",
+        "to": "0xKEY_57872e6fc9df628aef45d65dd7f08c34faf9e608",
+        "baseAmount": 520,
+        "amount": 52000
+      }
+    },
+    {
+      "requestId": "0xKEY_c4f452ed2306069fc327ffa2977ba8318eadd65c",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_b89f8006b278953b3507a49bf8ed3b38feabc2ac",
+      "params": {
+        "from": "0xKEY_6cafe78570b10c6e460f66816c31c6c71665c3e9",
+        "to": "0xKEY_d9eae8d5d9fa2f7a90791a4259ffe52c1e0600d6",
+        "baseAmount": 525,
+        "amount": 52500
+      }
+    },
+    {
+      "requestId": "0xKEY_a62a934c07fc7905cf6cbea6837d247683cace33",
+      "operation": "simulate.transfer",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_db2f883ee4c8a39e2c7a6dc2415428e463e55245",
+      "params": {
+        "from": "0xKEY_dd3c682d33397e7d12122652fa3f9683226a778e",
+        "to": "0xKEY_6424269f3b4e91ea615fd9dc3e5f087eb7c063e4",
+        "baseAmount": 530,
+        "amount": 53000
+      }
+    },
+    {
+      "requestId": "0xKEY_944d7649fc3e9cf9b68455f094a1726dfd36df84",
+      "operation": "simulate.multisig.sign",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_3d1a87da85ec411768938826df8ce3bbf9b2edc5",
+      "params": {
+        "from": "0xKEY_935f71b4a031b5b80f1457185bffe0cca21a46f3",
+        "to": "0xKEY_55932da547650b4c719247a28bd0bd103e69c626",
+        "baseAmount": 535,
+        "amount": 53500
+      }
+    },
+    {
+      "requestId": "0xKEY_24da67afae24d8d0e2425265dc1df60a9b4ba2b6",
+      "operation": "simulate.block.compile",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_01520333da4f0aa85de38c71821d2ef2f149956e",
+      "params": {
+        "from": "0xKEY_33d03561d66c46646fa4280703d4ad9e1caab5d7",
+        "to": "0xKEY_e4b8bd5e282a03270ffe3410dd4b605106ed5c27",
+        "baseAmount": 540,
+        "amount": 54000
+      }
+    },
+    {
+      "requestId": "0xKEY_88f21ace0653963e2809f13384c8f67ad72a34b5",
+      "operation": "simulate.cache.collect",
+      "protocol": "ABI_API_1",
+      "idempotencyKey": "0xKEY_59c133dfa6ea58a0fbc26b9dbfaf958382d8568f",
+      "params": {
+        "from": "0xKEY_02cdf478b411e6ec7bd31ce9aa90a1240a70a177",
+        "to": "0xKEY_caab7d86dae8c6e3125e272fef922c216bf2c320",
+        "baseAmount": 545,
+        "amount": 54500
+      }
+    }
+  ],
+  "multiSig": {
+    "multiSigTxId": "mstx_fb941390f680f37d8cc0084e15e0212194ac9bf1",
+    "requiredSignatures": 2,
+    "totalConfiguredSigners": 3,
+    "signersMatrix": [
+      "0xKEY_cdd2201a1affbb21047141fbcd780d6225db88b4",
+      "0xKEY_6668d05cd33abccbdb4aebdb4ae1c00d2d793c31",
+      "0xKEY_663ca9a5d1ebf7cc0cd0fe74e51ab6d7b030eac3"
+    ],
+    "amount": 250000,
+    "gasFee": 3500,
+    "signaturePayloads": [
+      {
+        "signerAddress": "0xKEY_cdd2201a1affbb21047141fbcd780d6225db88b4",
+        "signature": "sig_det_auth_246171e29fd2",
+        "timestamp": 1792892079596
+      }
+    ],
+    "payloadState": "PENDING SIGNATURES"
+  },
+  "block": {
+    "blockNumber": 1001,
+    "merkleRoot": "root_4a25ef300a8941d18c98d04488cd0c832eaf9fbb",
+    "transactions": [
+      {
+        "transactionId": "tx_aa0ef4fa2b19f5812e953723c00088a426a23417",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_5c68d234b3ea7631a8664b98c2975bbdbd239aa9",
+        "amount": 500000,
+        "gasFee": 4600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_aa0ef4fa2b19"
+      },
+      {
+        "transactionId": "tx_2dd0778e263210f2db37f3c9c06f87c18e6e5cac",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_3370de5d86805bedd54841dac7ad607c4f6fa38a",
+        "amount": 500000,
+        "gasFee": 1700,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_2dd0778e2632"
+      },
+      {
+        "transactionId": "tx_c74dfd23c8741a1fe53cee7ddf992f93ebc52102",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_cfb5a142434d41756df090cb21571361140e3143",
+        "amount": 500000,
+        "gasFee": 3600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c74dfd23c874"
+      },
+      {
+        "transactionId": "tx_4c837790856a9fae7586d647e87e90bf2377b1b3",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_b559ea82461fb9d57149a60be20761f8518bae38",
+        "amount": 500000,
+        "gasFee": 2200,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_4c837790856a"
+      },
+      {
+        "transactionId": "tx_c79745132d69d51a6d5499e92aa64dd9e8ff4009",
+        "senderAddress": "0xGENESIS_93a210f0234ee85c86c1cd3ad1c21520143aff6f",
+        "recipientAddress": "0xKEY_c80614d5a621c58ad2ef1bf236424ea2950f8787",
+        "amount": 500000,
+        "gasFee": 3600,
+        "timestamp": 1792892079596,
+        "status": "CONFIRMED",
+        "signature": "sig_det_c79745132d69"
+      }
+    ]
+  }
+}

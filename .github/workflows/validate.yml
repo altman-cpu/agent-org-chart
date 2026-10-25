@@ -49,5 +49,8 @@ jobs:
       - name: Run bounded local payload simulation
         run: npm run simulate:api
 
+      - name: Validate genesis telemetry fixtures (100 + 100, deterministic)
+        run: npm run validate:genesis
+
       - name: Audit dependencies
         run: npm audit

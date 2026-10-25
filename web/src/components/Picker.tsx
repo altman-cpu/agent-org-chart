@@ -11,11 +11,12 @@ interface PickerProps {
   onOpenTeam: (teamId: string) => void
   onOpenDriverTools: () => void
   onOpenBusinessWorkspace: () => void
+  onOpenTelemetry: () => void
 }
 
 // One action per row: pick the team to see it on the canvas. On phones this list
 // is the home screen and a picked team replaces it until "← Teams".
-export default function Picker({ teams, openTeamId, query, onQuery, onOpenTeam, onOpenDriverTools, onOpenBusinessWorkspace }: PickerProps) {
+export default function Picker({ teams, openTeamId, query, onQuery, onOpenTeam, onOpenDriverTools, onOpenBusinessWorkspace, onOpenTelemetry }: PickerProps) {
   const q = query.trim().toLowerCase()
   const hits = (t: Team) => (q ? t.chart.roles.filter(r => r.name.toLowerCase().includes(q)).map(r => r.id) : [])
   const visible = teams.filter(t => !q || t.chart.title.toLowerCase().includes(q) || hits(t).length)
@@ -39,6 +40,11 @@ export default function Picker({ teams, openTeamId, query, onQuery, onOpenTeam, 
         <button type="button" className="driver-tool-launcher business-tool-launcher" onClick={onOpenBusinessWorkspace}>
           <span className="driver-tool-symbol" aria-hidden="true">D</span>
           <span className="driver-tool-copy"><strong>DASH Car Wash starter</strong><small>Business skeleton · rideshare add-on</small></span>
+          <span className="driver-tool-arrow" aria-hidden="true">→</span>
+        </button>
+        <button type="button" className="driver-tool-launcher business-tool-launcher" onClick={onOpenTelemetry}>
+          <span className="driver-tool-symbol" aria-hidden="true">⌁</span>
+          <span className="driver-tool-copy"><strong>Genesis telemetry console</strong><small>Beacon map · 0xKEY hash registry · simulation only</small></span>
           <span className="driver-tool-arrow" aria-hidden="true">→</span>
         </button>
       </header>

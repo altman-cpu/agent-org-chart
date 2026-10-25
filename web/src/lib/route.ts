@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 // Older links still open the right team: #/sdr, #/sdr?role=email, and
 // #/?hired=sdr,marketing (the first team listed).
 export interface Route {
-  view: 'catalog' | 'driver-tools' | 'business'
+  view: 'catalog' | 'driver-tools' | 'business' | 'telemetry'
   teamId: string | null
   roleId: string | null
 }
@@ -29,6 +29,7 @@ export function parseHash(hash: string): Route {
 }
 
 export function toHash(route: Route): string {
+  if (route.view === 'telemetry') return '#/telemetry'
   if (route.view === 'business') return '#/business'
   if (route.view === 'driver-tools') return '#/driver-tools'
   if (!route.teamId) return '#/'

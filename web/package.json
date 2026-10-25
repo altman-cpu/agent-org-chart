@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "validate": "node scripts/validate-charts.mjs",
     "validate:api": "node scripts/validate-api-payloads.mjs",
-    "simulate:api": "node scripts/validate-api-payloads.mjs --cycles=10"
+    "simulate:api": "node scripts/validate-api-payloads.mjs --cycles=10",
+    "validate:genesis": "node scripts/validate-genesis-fixtures.mjs",
+    "fixtures:genesis": "node scripts/validate-genesis-fixtures.mjs --write"
   },
   "dependencies": {
     "react": "^19.2.8",

@@ -6,6 +6,8 @@ import TeamPanel from './components/TeamPanel'
 import GitHubLink from './components/GitHubLink'
 import BusinessWorkspace from './BusinessWorkspace'
 import DriverWorkspace from './DriverWorkspace'
+// Eager import on purpose: the telemetry console specs "no personalized lazy load".
+import TelemetryConsole from './TelemetryConsole'
 import { buildTeams, importPrompt } from './lib/catalog'
 import { copyText, roleInstruction } from './lib/copy'
 import { useRoute, type Route } from './lib/route'
@@ -94,7 +96,9 @@ function App() {
   )
 
   useEffect(() => {
-    document.title = route.view === 'business'
+    document.title = route.view === 'telemetry'
+      ? 'Genesis telemetry console · Agent Army'
+      : route.view === 'business'
       ? 'DASH Car Wash · Agent Army'
       : route.view === 'driver-tools'
         ? 'Driver toolkit · Agent Army'
@@ -115,6 +119,7 @@ function App() {
   const pickTeam = (id: string) => go({ view: 'catalog', teamId: id, roleId: null })
   const openDriverTools = () => go({ view: 'driver-tools', teamId: null, roleId: null })
   const openBusinessWorkspace = () => go({ view: 'business', teamId: null, roleId: null })
+  const openTelemetry = () => go({ view: 'telemetry', teamId: null, roleId: null })
 
   const onRole = (teamId: string, roleId: string) => {
     const r = routeRef.current
@@ -138,6 +143,10 @@ function App() {
     if (!team || !role) return
     const ok = await copyText(roleInstruction(team.chart, role))
     toast(ok ? `${role.name} copied` : 'Copy failed')
+  }
+
+  if (route.view === 'telemetry') {
+    return <TelemetryConsole onBack={() => go({ view: 'catalog', teamId: null, roleId: null })} />
   }
 
   if (route.view === 'business') {
@@ -179,6 +188,7 @@ function App() {
         onOpenTeam={pickTeam}
         onOpenDriverTools={openDriverTools}
         onOpenBusinessWorkspace={openBusinessWorkspace}
+        onOpenTelemetry={openTelemetry}
       />
 
       {team && (

@@ -19,6 +19,12 @@ A configurable business skeleton with:
 
 Profile and service-menu edits are saved in this browser’s local storage. The service list is a starter template, not a published price list or live booking system. There are currently **zero live provider connections**.
 
+### Genesis telemetry console — `#/telemetry`
+
+The original green cyber-telemetry console, restored and completed: interactive beacon map (Shane anchor, Coast 360 600-mile ring, 4 network signature profiles, 2 randomness telemetry monitors, 3 neural engines) with legend filters and payload preview; a non-stop typing terminal at a deliberate 2200 ms cadence with `[AUTOMATED THINKING]` buffer lines, per-line buffered timestamp-purpose notes, and a live compass; and the full automation suite — document matrix registry (SHA-256 → `0xKEY_` hashes, persisted only on **SAVE WORK REGISTRY**), `TelemetryAPI` script-injection port (`getCache`, `updateHashRegistry`, …), Octokit compartment map (local model, no GitHub calls), deterministic `CryptoAutomationHarness`, threshold-signing simulator, smart-contract template builder, API schema decoder, haptic thumb JSX nucleus, and SIM-labelled tickers / cache→gold ×10000 / provisional-credit ledger.
+
+**Simulation only:** no bank (Marcus/Goldman Sachs), Apple Card, blockchain, gold, or marketplace connection exists; no account is created and no money moves. Eager-loaded, zero analytics, nothing leaves the tab. Every registered hash/name/seed from the working session is saved in [`../docs/telemetry/HASH-REGISTRY.md`](../docs/telemetry/HASH-REGISTRY.md); the genesis clone schema is [`../schemas/genesis-telemetry.schema.json`](../schemas/genesis-telemetry.schema.json) and the deterministic 100-fixture / 100-request batch is `scripts/fixtures/genesis-telemetry-100.json` (`npm run validate:genesis`, also in CI).
+
 ### Driver toolkit — `#/driver-tools`
 
 - Earnings estimator with editable assumptions and client-side CSV import (`gross,miles,online_hours`). The CSV is parsed in the browser, not uploaded.
@@ -55,6 +61,7 @@ npm run lint
 npm run validate
 npm run validate:api
 npm run simulate:api
+npm run validate:genesis
 npm audit
 ```
 
@@ -72,6 +79,7 @@ The current site can be deployed to any static host. During build, Vite copies t
 - `src/App.tsx` — route selection and org-chart catalog shell.
 - `src/BusinessWorkspace.tsx`, `src/business-workspace.css` — DASH Car Wash starter.
 - `src/DriverWorkspace.tsx`, `src/driver-tools.css` — driver planning and appeal-prep tools.
+- `src/TelemetryConsole.tsx`, `src/telemetry.css`, `src/lib/telemetry.ts` — Genesis telemetry console, deterministic mock harness, hash registry, schema validators/decoders (simulation only).
 - `src/lib/business-adapters.ts` — provider-neutral read-only API contracts and connector status definitions.
 - `src/lib/route.ts` — hash routes for catalog, business starter, and driver toolkit.
 - `src/components/` — catalog canvas, picker, and team panel.

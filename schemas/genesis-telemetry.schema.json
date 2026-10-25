@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/genesis-telemetry.schema.json",
+  "title": "Genesis telemetry — complete clone schema (ABI_API_1, simulation only)",
+  "description": "Validates deterministic mock batches produced by web/src/lib/telemetry.ts and web/scripts/validate-genesis-fixtures.mjs. Fixtures are synthetic: no real chain, bank, wallet, or marketplace data. Financial values are scaled base x 100. Canonical hash string: 0xKEY_<40 lowercase hex>.",
+  "type": "object",
+  "required": ["protocol", "fixtures", "requests", "multiSig"],
+  "additionalProperties": false,
+  "properties": {
+    "protocol": { "const": "ABI_API_1" },
+    "truthAnchor": { "const": "ABI_API_1LOOKATCODEATNO-ONEHADTHEABSOLUTETRUTHEXCEPTFORMYSELF" },
+    "simulation": { "const": true },
+    "fixtures": {
+      "type": "array", "minItems": 100, "maxItems": 100,
+      "items": { "$ref": "#/$defs/fixture" }
+    },
+    "requests": {
+      "type": "array", "minItems": 100, "maxItems": 100,
+      "items": { "$ref": "#/$defs/request" }
+    },
+    "multiSig": { "$ref": "#/$defs/multiSig" },
+    "block": { "$ref": "#/$defs/block" }
+  },
+  "$defs": {
+    "keyHash": { "type": "string", "pattern": "^0xKEY_[0-9a-f]{40}$" },
+    "senderHash": { "type": "string", "pattern": "^(0xKEY_|0xGENESIS_)[0-9a-f]{40}$" },
+    "scaledAmount": { "type": "integer", "minimum": 0, "multipleOf": 100 },
+    "transaction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transactionId", "senderAddress", "recipientAddress", "amount", "gasFee", "timestamp", "status", "signature"],
+      "properties": {
+        "transactionId": { "type": "string", "pattern": "^tx_[0-9a-f]{40}$" },
+        "senderAddress": { "$ref": "#/$defs/senderHash" },
+        "recipientAddress": { "$ref": "#/$defs/keyHash" },
+        "amount": { "$ref": "#/$defs/scaledAmount" },
+        "gasFee": { "$ref": "#/$defs/scaledAmount" },
+        "timestamp": { "type": "integer", "minimum": 0 },
+        "status": { "enum": ["CONFIRMED", "PENDING", "FAILED"] },
+        "signature": { "type": "string", "pattern": "^sig_det_[0-9a-f_]+$" }
+      }
+    },
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["caseId", "kind", "protocol", "transaction", "expected"],
+      "properties": {
+        "caseId": { "type": "string", "pattern": "^genesis-fixture-[0-9]{3}$" },
+        "kind": { "enum": ["transaction", "zero-balance", "high-throughput", "failure-injected", "multisig"] },
+        "protocol": { "const": "ABI_API_1" },
+        "transaction": { "$ref": "#/$defs/transaction" },
+        "expected": {
+          "type": "object", "additionalProperties": false,
+          "required": ["valid", "amountScaledBy100"],
+          "properties": { "valid": { "const": true }, "amountScaledBy100": { "const": true } }
+        }
+      }
+    },
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requestId", "operation", "protocol", "idempotencyKey", "params"],
+      "properties": {
+        "requestId": { "$ref": "#/$defs/keyHash" },
+        "operation": { "enum": ["simulate.transfer", "simulate.multisig.sign", "simulate.block.compile", "simulate.cache.collect"] },
+        "protocol": { "const": "ABI_API_1" },
+        "idempotencyKey": { "$ref": "#/$defs/keyHash" },
+        "params": {
+          "type": "object", "additionalProperties": false,
+          "required": ["from", "to", "baseAmount", "amount"],
+          "properties": {
+            "from": { "$ref": "#/$defs/keyHash" },
+            "to": { "$ref": "#/$defs/keyHash" },
+            "baseAmount": { "type": "integer", "minimum": 0 },
+            "amount": { "$ref": "#/$defs/scaledAmount" }
+          }
+        }
+      }
+    },
+    "multiSig": {
+      "type": "object", "additionalProperties": false,
+      "required": ["multiSigTxId", "requiredSignatures", "totalConfiguredSigners", "signersMatrix", "amount", "gasFee", "signaturePayloads", "payloadState"],
+      "properties": {
+        "multiSigTxId": { "type": "string", "pattern": "^mstx_[0-9a-f]{40}$" },
+        "requiredSignatures": { "type": "integer", "minimum": 1 },
+        "totalConfiguredSigners": { "type": "integer", "minimum": 1 },
+        "signersMatrix": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/keyHash" } },
+        "amount": { "$ref": "#/$defs/scaledAmount" },
+        "gasFee": { "$ref": "#/$defs/scaledAmount" },
+        "signaturePayloads": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["signerAddress", "signature", "timestamp"],
+            "properties": {
+              "signerAddress": { "$ref": "#/$defs/keyHash" },
+              "signature": { "type": "string", "pattern": "^sig_det_" },
+              "timestamp": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "payloadState": { "enum": ["PENDING SIGNATURES", "THRESHOLD MET (SIMULATED)"] }
+      }
+    },
+    "block": {
+      "type": "object", "additionalProperties": false,
+      "required": ["blockNumber", "merkleRoot", "transactions"],
+      "properties": {
+        "blockNumber": { "type": "integer", "minimum": 0 },
+        "merkleRoot": { "type": "string", "pattern": "^root_[0-9a-f]{40}$" },
+        "transactions": { "type": "array", "items": { "$ref": "#/$defs/transaction" } }
+      }
+    }
+  },
+  "examples": [
+    {
+      "protocol": "ABI_API_1",
+      "simulation": true,
+      "multiSig": {
+        "multiSigTxId": "mstx_fb941390f680f37d8cc0084e15e0212194ac9bf1",
+        "requiredSignatures": 2,
+        "totalConfiguredSigners": 3,
+        "signersMatrix": [
+          "0xKEY_cdd2201a1affbb21047141fbcd780d6225db88b4",
+          "0xKEY_6668d05cd33abccbdb4aebdb4ae1c00d2d793c31",
+          "0xKEY_663ca9a5d1ebf7cc0cd0fe74e51ab6d7b030eac3"
+        ],
+        "amount": 250000,
+        "gasFee": 3500,
+        "signaturePayloads": [
+          { "signerAddress": "0xKEY_cdd2201a1affbb21047141fbcd780d6225db88b4", "signature": "sig_det_auth_246171e29fd2", "timestamp": 1792892079596 }
+        ],
+        "payloadState": "PENDING SIGNATURES"
+      }
+    }
+  ]
+}
