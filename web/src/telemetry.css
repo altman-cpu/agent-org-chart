@@ -64,3 +64,34 @@
 .tc-focus { border:1px dashed var(--amber); color:#ffe9a8; padding:9px; border-radius:6px; }
 .tc-compartment { border:1px solid var(--line); border-radius:6px; padding:8px 10px; margin:7px 0; background:var(--panel2); }
 .tc-compartment summary { cursor:pointer; font-size:12.5px; }
+
+/* --- Vulnerability Threat Intelligence Console --- */
+.tc-log.vuln { color:#ff9d5c; }
+.tc-vuln-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:14px; }
+@media (max-width: 980px) { .tc-vuln-grid { grid-template-columns:1fr; } }
+.tc-analyst { border:1px dashed #37e0ff; color:#bdeffc; padding:8px 10px; border-radius:6px; font-size:12.5px; }
+.tc-decodebar { height:10px; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#000; margin:8px 0; }
+.tc-decodebar span { display:block; height:100%; background:linear-gradient(90deg,#1d7a3a,#39ff6a,#ffd34d); transition:width .1s linear; }
+.tc-code { min-height:190px; color:#d9ffe2; }
+.tc-pressure { max-width:240px; }
+.tc-vuln-osc { display:flex; gap:4px; align-items:flex-end; height:54px; border:1px solid var(--line); border-radius:6px; background:#000; padding:6px; margin-top:8px; }
+.tc-vuln-osc span { flex:1; background:#ff9d5c; animation:tc-wave 1.2s ease-in-out infinite alternate; min-height:4px; }
+.tc-vuln-osc span:nth-child(odd) { background:#39ff6a; }
+@media (prefers-reduced-motion: reduce) { .tc-vuln-osc span { animation:none; } }
+.tc-findings { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.tc-finding { border:1px solid var(--line); border-left-width:5px; border-radius:6px; padding:8px 10px; background:#021007; font-size:12.5px; }
+.tc-finding.sev-critical { border-left-color:#ff4d4d; } .tc-finding.sev-high { border-left-color:#ff9d5c; }
+.tc-finding.sev-medium { border-left-color:#ffd34d; } .tc-finding.sev-low { border-left-color:#37e0ff; }
+.tc-finding button { margin-top:6px; }
+.tc-sev { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10.5px; font-weight:700; margin-right:7px; background:#14532d; color:#eaffea; }
+.tc-sev.sev-critical { background:#7f1d1d; color:#ffd7d7; }
+.tc-evidence { color:#9fd8ae; margin-top:4px; word-break:break-all; }
+.tc-matrix { display:grid; gap:6px; }
+.tc-matrix-row { display:flex; gap:10px; justify-content:space-between; border:1px solid var(--line); border-radius:6px; padding:6px 9px; font-size:12px; background:#021007; flex-wrap:wrap; }
+.tc-risk-on { color:#ff9d5c; font-weight:700; }
+.tc-modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.78); display:grid; place-items:center; z-index:60; padding:14px; }
+.tc-modal { background:#04140a; border:1px solid var(--amber); border-radius:10px; max-width:720px; width:100%; max-height:90vh; overflow-y:auto; padding:18px; color:var(--g); box-shadow:0 0 44px rgba(255,157,92,.35); }
+.tc-modal header { display:flex; align-items:center; gap:10px; }
+.tc-modal header h2 { border:0; margin:0; flex:1; }
+.tc-modal-close { flex:none; }
+.tc-modal a { color:#7dd3fc; }

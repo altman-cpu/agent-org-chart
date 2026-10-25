@@ -52,5 +52,8 @@ jobs:
       - name: Validate genesis telemetry fixtures (100 + 100, deterministic)
         run: npm run validate:genesis
 
+      - name: Validate vulnerability intelligence scanner (CWE self-test)
+        run: npm run validate:vuln
+
       - name: Audit dependencies
         run: npm audit

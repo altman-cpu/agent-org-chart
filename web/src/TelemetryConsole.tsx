@@ -7,8 +7,12 @@ import {
   generate100Requests, mockHashFromString, mulberry32, nextTickers, sha256Key, validateTransaction,
   type BeaconClass, type LedgerState, type MultiSigState, type Ticker,
 } from './lib/telemetry'
+import {
+  SEVERITY_LABEL, SNIPPET_CORPUS, analyzeSnippet, customSnippet, loadSnippet, riskScore, runScannerSelfTest,
+  type SnippetBlock, type VulnFinding,
+} from './lib/vuln-intel'
 
-interface LogEntry { id: number; kind: 'thinking' | 'signal' | 'system' | 'script'; ts: string; tsPurpose: string; text: string; cls?: BeaconClass }
+interface LogEntry { id: number; kind: 'thinking' | 'signal' | 'system' | 'script' | 'vuln'; ts: string; tsPurpose: string; text: string; cls?: BeaconClass }
 interface RegistryDoc { title: string; body: string; hash: string; hashKind: 'sha256' | 'mock-det'; compartment: string }
 interface CreditEntry { id: string; amountSim: number; note: string }
 
@@ -18,6 +22,7 @@ const TS_PURPOSES: Record<string, string> = {
   signal: 'arrival stamp — orders this beacon ping against every other zone so the stream can be replayed in sequence',
   system: 'state stamp — pins the generation/freeze change to the moment you pressed the control',
   script: 'injection stamp — marks when your script wrote into the console through TelemetryAPI',
+  vuln: 'recon stamp — marks the exact decode moment a weakness pattern completed in the typing buffer',
 }
 const JSX_SNIPPETS = [
   '<Beacon id="genesis-0" hash="0xKEY_…" anchor />',
@@ -82,8 +87,20 @@ export default function TelemetryConsole({ onBack }: { onBack: () => void }) {
   const [jsxLines, setJsxLines] = useState<string[]>(['// thumbs generate the next JSX from here — tap a thumb pad'])
   const [focusLine, setFocusLine] = useState('One thought, set once: steady betterment activity, high refresh, no loops.')
   const [typed, setTyped] = useState({ id: 0, n: 0 })
+  // Vulnerability Threat Intelligence console state
+  const [activeSnippet, setActiveSnippet] = useState<SnippetBlock>(() => loadSnippet(0))
+  const [snippetIndex, setSnippetIndex] = useState(0)
+  const [decodeChars, setDecodeChars] = useState(0)
+  const [decodeRunning, setDecodeRunning] = useState(true)
+  const [pressure, setPressure] = useState(3) // classic mechanical pressure: chars per decode tick
+  const [reconMatrix, setReconMatrix] = useState<Record<string, VulnFinding[]>>({})
+  const [modalFinding, setModalFinding] = useState<VulnFinding | null>(null)
+  const [customCode, setCustomCode] = useState('')
+  const [selfTestResult, setSelfTestResult] = useState('')
 
   const logId = useRef(1)
+  const seenFindings = useRef<Set<string>>(new Set())
+  const recordedDecode = useRef('')
   const rngRef = useRef(mulberry32(424242))
   const stepRef = useRef(0)
   const logBoxRef = useRef<HTMLDivElement>(null)
@@ -137,6 +154,82 @@ export default function TelemetryConsole({ onBack }: { onBack: () => void }) {
     cacheRef.current = { generation, frozen, heading, docs, credits, tickers, multiSig, cacheUnits, goldSim: cacheToGoldSim(cacheUnits) }
   })
 
+  // --- Vulnerability Threat Intelligence: live decoding + recon ---
+  // loadSnippet() loop mechanics: deterministically loads the next mainframe
+  // sequence block, resets the typing matrix buffer, and injects the block's
+  // analytical vulnerability note beside it. Classic controls are preserved:
+  // mechanical pressure (chars/tick), the hidden undecoded buffer, oscillator
+  // feedback, and FREEZE halting decode along with the signal stream.
+  const loadSnippetIntoMatrix = useCallback((snippet: SnippetBlock) => {
+    seenFindings.current = new Set()
+    recordedDecode.current = ''
+    setActiveSnippet(snippet)
+    setDecodeChars(0)
+    setDecodeRunning(true)
+    setModalFinding(null)
+    pushLog('vuln', `loadSnippet() → ${snippet.id} “${snippet.title}” streamed into typing matrix buffer · analyst note injected · ${snippet.code.length} chars held in hidden execution buffer`)
+  }, [pushLog])
+
+  const loadNextSnippet = useCallback(() => {
+    const next = snippetIndex + 1
+    setSnippetIndex(next)
+    loadSnippetIntoMatrix(loadSnippet(next))
+  }, [snippetIndex, loadSnippetIntoMatrix])
+
+  const decodedText = activeSnippet.code.slice(0, decodeChars)
+  const decodeDone = decodeChars >= activeSnippet.code.length
+  const liveFindings = useMemo(() => analyzeSnippet(decodedText), [decodedText])
+  const liveRisk = riskScore(liveFindings)
+  const matrixFindings = useMemo(() => Object.values(reconMatrix).flat(), [reconMatrix])
+
+  useEffect(() => {
+    cacheRef.current = {
+      ...cacheRef.current,
+      vulnIntel: {
+        activeSnippet: activeSnippet.id, decodedChars: decodeChars, decodeDone,
+        liveFindings: liveFindings.map(f => `${f.cwe}@L${f.line}`),
+        riskScore: liveRisk, sequencesScanned: Object.keys(reconMatrix).length,
+      },
+    }
+  })
+
+  useEffect(() => {
+    if (!decodeRunning || frozen || decodeDone) return
+    const t = window.setInterval(() => {
+      setDecodeChars(n => Math.min(activeSnippet.code.length, n + pressure))
+    }, 34)
+    return () => window.clearInterval(t)
+  }, [decodeRunning, frozen, decodeDone, pressure, activeSnippet])
+
+  // Findings surface the moment their pattern completes in the buffer.
+  useEffect(() => {
+    for (const f of liveFindings) {
+      const key = `${activeSnippet.id}:${f.ruleId}:${f.line}:${activeSnippet.code.length}`
+      if (!seenFindings.current.has(key)) {
+        seenFindings.current.add(key)
+        pushLog('vuln', `⚠ ${f.cwe} [${SEVERITY_LABEL[f.severity]}] ${f.name} — ${activeSnippet.id} line ${f.line}: ${f.evidence}`)
+      }
+    }
+  }, [liveFindings, activeSnippet, pushLog])
+
+  // Completed decode commits the sequence into the recon matrix.
+  useEffect(() => {
+    const key = `${activeSnippet.id}:${activeSnippet.code.length}`
+    if (!decodeDone || recordedDecode.current === key) return
+    recordedDecode.current = key
+    const full = analyzeSnippet(activeSnippet.code)
+    setReconMatrix(prev => ({ ...prev, [activeSnippet.id]: full }))
+    pushLog('vuln', full.length
+      ? `DECODE COMPLETE ${activeSnippet.id} → ${full.length} weakness pattern(s) committed to recon matrix · risk ${riskScore(full)}/100`
+      : `DECODE COMPLETE ${activeSnippet.id} → clean sequence, no CWE patterns matched · committed to recon matrix`)
+  }, [decodeDone, activeSnippet, pushLog])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setModalFinding(null) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   const selected = BEACONS.find(b => b.id === selectedId) ?? BEACONS[0]
   const creditTotal = credits.reduce((s, c) => s + c.amountSim, 0)
   const filteredLogs = useMemo(() => logs.filter(l => !l.cls || visible.has(l.cls)), [logs, visible])
@@ -165,6 +258,8 @@ export default function TelemetryConsole({ onBack }: { onBack: () => void }) {
       log: (msg: string) => { out.push(String(msg)); pushLog('script', String(msg)) },
       hashString: (s: string) => mockHashFromString(String(s)),
       getBeacons: () => BEACONS,
+      scan: (code: string) => analyzeSnippet(String(code)),
+      loadSnippet: (i: number) => { const s = loadSnippet(Number(i) || 0); setSnippetIndex(Number(i) || 0); loadSnippetIntoMatrix(s); return s.id },
       tickers: () => tickers,
       advanceGen: () => setGeneration(g => g + 1),
       updateHashRegistry: (e: { title: string; body: string }) => {
@@ -309,6 +404,82 @@ export default function TelemetryConsole({ onBack }: { onBack: () => void }) {
         </section>
       </div>
 
+      <section className="tc-panel tc-vuln" aria-label="Vulnerability Threat Intelligence Console">
+        <h2>🛡 VULNERABILITY THREAT INTELLIGENCE CONSOLE — LIVE RECON MATRIX</h2>
+        <p className="tc-hint">
+          Each mainframe sequence block is decoded into the typing matrix buffer while the recon column exposes
+          CWE-classified weaknesses <strong>the moment their pattern completes</strong>. Defensive static heuristics only —
+          analysed code is <strong>never executed</strong>, findings carry confidence levels, and this aids (never replaces) real SAST + review.
+          Classic flow preserved: mechanical pressure, hidden execution buffer ({Math.max(0, activeSnippet.code.length - decodeChars)} chars undecoded),
+          oscillator feedback, and FREEZE halting decode. Corpus: {SNIPPET_CORPUS.length} sequences incl. 2 clean references.
+        </p>
+        <div className="tc-btn-row">
+          <button type="button" className="tc-save" onClick={loadNextSnippet}>▶ LOAD NEXT SEQUENCE — loadSnippet()</button>
+          <button type="button" onClick={() => { seenFindings.current = new Set(); recordedDecode.current = ''; setDecodeChars(0); setDecodeRunning(true) }}>↺ RESTART DECODE</button>
+          <button type="button" onClick={() => setDecodeRunning(r => !r)}>{decodeRunning ? '⏸ PAUSE DECODE' : '▶ RESUME DECODE'}</button>
+          <button type="button" onClick={() => { const r = runScannerSelfTest(); setSelfTestResult(r.failures.length ? `✗ ${r.passed}/${r.total} — ${r.failures.join(' · ')}` : `✓ scanner self-test ${r.passed}/${r.total}: every vulnerable block yields exactly its expected CWE set; clean references stay silent`); pushLog('vuln', `scanner self-test ${r.passed}/${r.total} passed`) }}>RUN SCANNER SELF-TEST</button>
+          <label className="tc-pressure">mechanical pressure {pressure} chars/tick
+            <input type="range" min={1} max={12} value={pressure} onChange={e => setPressure(Number(e.target.value))} />
+          </label>
+        </div>
+        {selfTestResult && <p className="tc-ok">{selfTestResult}</p>}
+
+        <div className="tc-vuln-grid">
+          <div className="tc-vuln-col">
+            <h3>TYPING MATRIX BUFFER — {activeSnippet.id} · {activeSnippet.title} [{activeSnippet.language}]</h3>
+            <p className="tc-analyst">◈ ANALYST NOTE (injected by loadSnippet): {activeSnippet.analystNote}</p>
+            <div className="tc-decodebar" role="progressbar" aria-valuenow={Math.round((decodeChars / Math.max(1, activeSnippet.code.length)) * 100)} aria-valuemin={0} aria-valuemax={100} aria-label="Decode progress">
+              <span style={{ width: `${(decodeChars / Math.max(1, activeSnippet.code.length)) * 100}%` }} />
+            </div>
+            <pre className="tc-pre tc-code" aria-live="polite">{decodedText}{!decodeDone && <span className="tc-caret">▊</span>}{decodeDone && '\n// — DECODE COMPLETE —'}</pre>
+            <div className="tc-vuln-osc" aria-hidden="true" title={`Oscillator feedback — recon pressure ${liveRisk}/100`}>
+              {Array.from({ length: 18 }, (_, i) => (
+                <span key={i} style={{ height: `${6 + ((liveRisk * (i % 5 + 2)) % 44)}px`, animationDuration: `${Math.max(0.35, 1.6 - liveRisk / 90)}s` }} />
+              ))}
+            </div>
+            <p className="tc-hint">recon pressure <strong>{liveRisk}/100</strong> · oscillator tempo tracks live severity · {liveFindings.length} pattern(s) exposed so far in this sequence</p>
+            <label>Inject your own sequence (analysed as text only — never run)
+              <textarea rows={5} value={customCode} onChange={e => setCustomCode(e.target.value)} placeholder={"// paste code to scan, e.g.\nconst q = \"SELECT * FROM t WHERE id = '\" + id + \"'\""} spellCheck={false} /></label>
+            <button type="button" onClick={() => customCode.trim() && loadSnippetIntoMatrix(customSnippet(customCode))} disabled={!customCode.trim()}>LOAD CUSTOM SEQUENCE INTO MATRIX</button>
+          </div>
+
+          <div className="tc-vuln-col tc-recon">
+            <h3>LIVE RECON MATRIX — CWE DIAGNOSTICS</h3>
+            {liveFindings.length === 0 && (
+              <p className={decodeDone ? 'tc-ok' : 'tc-hint'}>{decodeDone ? '✓ No weakness patterns matched — clean sequence.' : '…decoding — no patterns matched yet in the revealed buffer.'}</p>
+            )}
+            <ul className="tc-findings">
+              {liveFindings.map((f, i) => (
+                <li key={`${f.ruleId}:${f.line}:${i}`} className={`tc-finding sev-${f.severity}`}>
+                  <span className="tc-sev">{SEVERITY_LABEL[f.severity]}</span>
+                  <strong>{f.cwe}</strong> {f.name}
+                  <div className="tc-evidence">L{f.line} · confidence {f.confidence} · <code>{f.evidence}</code></div>
+                  <button type="button" onClick={() => setModalFinding(f)}>DECONSTRUCT ▸</button>
+                </li>
+              ))}
+            </ul>
+            <h3>SEQUENCE MATRIX — COMPLETED DECODES ({Object.keys(reconMatrix).length})</h3>
+            {Object.keys(reconMatrix).length === 0 && <p className="tc-hint">No completed sequences yet — finish a decode or raise the pressure.</p>}
+            <div className="tc-matrix">
+              {Object.entries(reconMatrix).map(([id, fs]) => (
+                <div key={id} className="tc-matrix-row">
+                  <strong>{id}</strong>
+                  <span>{fs.length ? [...new Set(fs.map(f => f.cwe))].join(' · ') : '✓ clean'}</span>
+                  <span className={fs.length ? 'tc-risk-on' : 'tc-ok'}>risk {riskScore(fs)}/100</span>
+                </div>
+              ))}
+            </div>
+            {matrixFindings.length > 0 && (
+              <p className="tc-hint">
+                matrix totals: {(['critical', 'high', 'medium', 'low'] as const).map(s => `${SEVERITY_LABEL[s]} ${matrixFindings.filter(f => f.severity === s).length}`).join(' · ')}
+                {' '}· distinct CWEs {[...new Set(matrixFindings.map(f => f.cwe))].length}
+              </p>
+            )}
+            <button type="button" onClick={() => download('genesis-recon-matrix.json', JSON.stringify({ protocol: PROTOCOL_ID, exportedAt: nowTs(), disclaimer: 'Heuristic static diagnostics on simulated blocks; analysed code was never executed.', reconMatrix }, null, 2))} disabled={Object.keys(reconMatrix).length === 0}>EXPORT RECON MATRIX JSON</button>
+          </div>
+        </div>
+      </section>
+
       <div className="tc-grid">
         <section className="tc-panel">
           <h2>DOCUMENT MATRIX REGISTRY — ALL HASHES REGISTERED</h2>
@@ -428,9 +599,39 @@ export default function TelemetryConsole({ onBack }: { onBack: () => void }) {
           <li><code>transaction.timestamp</code> — pinned deterministic fixture time (1792892079596) so CI batches are byte-identical.</li>
           <li><code>signaturePayloads[].timestamp</code> — when each simulated signer approved; proves threshold order 1/2 → 2/2.</li>
           <li><code>savedAt / exportedAt</code> — when YOU pressed save/export. The only persistence stamps that exist.</li>
+          <li><code>recon ts (⚠ lines)</code> — the exact decode moment a CWE pattern completed in the typing matrix buffer.</li>
         </ul>
         <p className="tc-hint">Truth anchor: <code>{TRUTH_ANCHOR}</code> · registered verbatim in <code>docs/telemetry/HASH-REGISTRY.md</code> with every hash from the working session, saved for later work.</p>
       </section>
+
+      {modalFinding && (
+        <div className="tc-modal-backdrop" onClick={() => setModalFinding(null)}>
+          <div className="tc-modal" role="dialog" aria-modal="true" aria-label={`Security deconstruction ${modalFinding.cwe}`} onClick={e => e.stopPropagation()}>
+            <header>
+              <span className={`tc-sev sev-${modalFinding.severity}`}>{SEVERITY_LABEL[modalFinding.severity]}</span>
+              <h2>{modalFinding.cwe} — SECURITY DECONSTRUCTION</h2>
+              <button type="button" className="tc-modal-close" onClick={() => setModalFinding(null)} aria-label="Close deconstruction">✕</button>
+            </header>
+            <p><strong>{modalFinding.name}</strong> · rule <code>{modalFinding.ruleId}</code> · confidence {modalFinding.confidence} (heuristic pattern match)</p>
+            <h3>⚠ WHAT THE FLAW IS</h3>
+            <p>{modalFinding.description}</p>
+            <h3>⌖ EVIDENCE — {activeSnippet.id} line {modalFinding.line}</h3>
+            <pre className="tc-pre">{modalFinding.evidence}</pre>
+            <h3>⬢ DEFENSIVE FIX</h3>
+            <p>{modalFinding.remediation}</p>
+            <h3>◈ CONTEXT IN THIS CONSOLE</h3>
+            <ul className="tc-list">
+              <li>Sequence: <code>{activeSnippet.id}</code> “{activeSnippet.title}” — simulated training block; its code was scanned as text and never executed.</li>
+              <li>Discovered live at decode offset ~{decodeChars}/{activeSnippet.code.length} chars, then committed to the recon matrix on decode completion.</li>
+              <li>Preserved flow at discovery: cadence {LOG_CADENCE_MS}ms · mechanical pressure {pressure} chars/tick · generation {generation} · {frozen ? 'stream frozen' : 'stream live'}.</li>
+            </ul>
+            <p className="tc-hint">
+              Reference: <a href={`https://cwe.mitre.org/data/definitions/${modalFinding.cwe.replace('CWE-', '')}.html`} target="_blank" rel="noreferrer">MITRE {modalFinding.cwe}</a>
+              {' '}· Esc or click outside to close · findings are diagnostics with fixes — this console publishes no exploit steps.
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

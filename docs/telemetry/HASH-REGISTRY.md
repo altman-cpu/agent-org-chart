@@ -142,6 +142,19 @@ deterministic mock hash and are labelled `mock-det` so the two never blur.
 
 Verify anytime: `cd web && npm run validate:genesis` (also runs in CI).
 
+## 7b · Vulnerability Threat Intelligence Console (added 2026-10-25)
+
+Dedicated console inside `#/telemetry`: `loadSnippet()` cycles 10 simulated
+mainframe sequence blocks (`SEQ-01…SEQ-10`, incl. clean references `SEQ-09/10`)
+through the typing matrix buffer while the **Live Recon Matrix** column exposes
+CWE findings in real time (`GEN-VULN-001…014`: CWE-95/79/89/78/798/327/338/22/
+918/601/209/1321/400/862). Each finding opens a security-deconstruction modal
+(flaw, evidence, defensive fix, MITRE reference). Classic parameters preserved:
+mechanical pressure (chars/tick), hidden undecoded execution buffer, oscillator
+feedback tied to live risk, FREEZE semantics, 2200 ms cadence. Analysed code is
+never executed. Full design + limits: [`VULN-INTEL.md`](./VULN-INTEL.md);
+CI gate `npm run validate:vuln` (self-test 10/10 at registration).
+
 ## 8 · Later work — what is needed before anything goes live
 
 1. **Marcus / Apple Card:** accounts and provisional credits can only be opened

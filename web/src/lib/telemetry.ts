@@ -481,6 +481,11 @@ TelemetryAPI.updateHashRegistry({
   title: 'Injected note from script port',
   body: 'channel growth, compartment: Genesis, protocol: ABI_API_1'
 });
+
+// Vulnerability Threat Intelligence Bridge (static scan only, nothing executed):
+const findings = TelemetryAPI.scan('el.innerHTML = userName');
+TelemetryAPI.log('scan demo -> ' + findings.map(f => f.cwe).join(', '));
+TelemetryAPI.log('loaded sequence -> ' + TelemetryAPI.loadSnippet(2));
 TelemetryAPI.log('registry updated — press SAVE WORK REGISTRY to persist it.');
 return key;
 `

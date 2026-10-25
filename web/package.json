@@ -12,7 +12,8 @@
     "validate:api": "node scripts/validate-api-payloads.mjs",
     "simulate:api": "node scripts/validate-api-payloads.mjs --cycles=10",
     "validate:genesis": "node scripts/validate-genesis-fixtures.mjs",
-    "fixtures:genesis": "node scripts/validate-genesis-fixtures.mjs --write"
+    "fixtures:genesis": "node scripts/validate-genesis-fixtures.mjs --write",
+    "validate:vuln": "node --experimental-strip-types scripts/validate-vuln-intel.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
